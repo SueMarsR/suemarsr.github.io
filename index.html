@@ -1,1533 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tianyi Ma</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tianyi Ma - Homepage</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
-
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Lucide Icons for navigation -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* bg-slate-50 */
+        }
+        /* Hide all pages by default */
+        .page {
+            display: none;
+        }
+        /* Show the active page */
+        .page.active {
+            display: block;
+        }
+        /* Simple animation for section fade-in */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .uppercase {
+            text-transform: uppercase;
+        }
+        /* Nav link styling */
+        .nav-link {
+            cursor: pointer;
+            transition: color 0.2s;
+            padding-bottom: 2px;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link.active {
+            color: #2563eb; /* blue-600 */
+            font-weight: 500;
+            border-bottom-color: #2563eb;
+        }
+        .publication-authors {
+            font-style: italic;
+        }
+        .publication-authors .author-me {
+            font-weight: bold;
+            font-style: normal;
+        }
+    </style>
 </head>
-
-<body>
-
-  <!--
-    - #MAIN
-  -->
-
-  <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/avatar-mty-2.png" alt="Tianyi Ma" width="80" l>
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Tianyi Ma">Tianyi Ma</h1>
-
-          <p class="title">NLP Researcher</p>
-        </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:220232246@seu.edu.cn" class="contact-link">220232246@seu.edu.cn</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+8618852079860" class="contact-link">+86 18852079860</a>
-            </div>
-
-          </li>
-
-          <!-- <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">June 23, 1982</time>
-            </div>
-
-          </li> -->
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Nanjing, Jiangsu, China</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://scholar.google.com/citations?hl=en&user=HB7kZ3oAAAAJ&view_op=list_works&sortby=pubdate"
-              class="social-link">
-              <ion-icon name="logo-google"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://github.com/SueMarsR" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.youtube.com/channel/UCyx7t7Z4uPBF86ZkYADfWaA" class="social-link">
-              <ion-icon name="logo-youtube"></ion-icon>
-            </a>
-          </li>
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Publications</button>
-          </li>
-
-          <!-- <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li> -->
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About Me</h2>
+<body class="text-gray-800">
+
+    <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Navigation Bar -->
+        <header class="bg-white/80 backdrop-blur-sm shadow-sm rounded-xl sticky top-4 z-50 mb-8">
+            <nav class="flex items-center justify-between p-4">
+                <!-- <span class="text-xl font-bold text-gray-900">
+                    <img class="w-4 h-4 rounded-full object-cover shadow-lg" src="data/images/icon-owl-2.png" alt="Tianyi Ma 2025" onerror="this.onerror=null;this.src='data/images/icon-owl-2.png';">
+                </span> -->
+                <span id="nav-logo" class="text-xl font-bold text-gray-900">
+                    <img id="nav-logo-img"
+                         class="w-6 h-6 rounded-full object-cover shadow-lg"
+                         src="data/images/icon-owl-2.png"
+                         alt="Tianyi Ma 2025"
+                         onerror="this.onerror=null;this.src='data/images/icon-owl-2.png';">
+                </span>
+                <div class="flex items-center space-x-6 text-gray-600">
+                    <a onclick="showPage('home')" class="nav-link active">Home</a>
+                    <a onclick="showPage('publications')" class="nav-link">Publications</a>
+                    <!-- <a onclick="showPage('experience')" class="nav-link">Experience</a> -->
+                    <a onclick="showPage('photography')" class="nav-link">Photography</a>
+                </div>
+            </nav>
         </header>
 
-        <section class="about-text">
-          <p>
-            I am a recent graduate of Southeast University in China, having earned my bachelor's degree of Artificial
-            Intelligence.
-
-          </p>
-
-          <p>
-            My research interest lies in machine learning modeling and natural language processing (NLP)
-            with a focus on efficiency, safety, and explainability.
-            More specifically, I am focusing on addressing fact-conflicting hallucinations in text generation
-            to explore the faithfulness of explanations and creating more efficient and accessible NLP.
-          </p>
-        </section>
-
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">Research Interest</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Enhancing Text Generation: Balancing Fluency and Fidelity</h4>
-
-                <p class="service-item-text">
-                  <!-- The most modern and high-quality design made at a professional level. -->
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Ameliorating Computational Efficiency and Safety through Interpretable
-                  Approaches</h4>
-
-                <p class="service-item-text">
-                  <!-- High-quality development of sites at the professional level. -->
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-quote.svg" alt="mobile app icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Addressing fact-conflicting hallucinations in LLMs</h4>
-
-                <p class="service-item-text">
-                  <!-- Q1: How do we enhance the interpretability of misinformation detection systems to trace the specific
-                  source and nature of errors in the information generated by LLMs?
-                  <br>
-                  <br>
-                  Q2: How do we quantify the impact of misinformation on the overall credibility of a given text,
-                  transcending binary assessments to measure the extent to which misinformation affects the credibility
-                  of the entire content? -->
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="camera icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Trustworthy and Responsible ML & NLP Applications</h4>
-
-                <p class="service-item-text">
-                  <!-- I make high-quality photos of any category at a professional level. -->
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-        <!-- 
-        Latest Publications -->
-
-        <section class="news">
-          <h3 class="h3 news-title">Latest Publications</h3>
-
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="project-item  active">
-              <a href="https://ieeexplore.ieee.org/abstract/document/10152826/">
-
-                <!-- <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img style="width: 160px; height: 160px;" src="./assets/images/publication-FedGraD.png" alt="FedGrad"
-                    loading="lazy">
-                </figure> -->
-
-                <h3 class="project-title">Applying Robust Gradient Difference Compression to Federated Learning</h3>
-                <p class="project-category">CSCWD 2023</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active">
-              <a href="https://www.mdpi.com/2076-3417/12/18/8998">
-
-                <!-- <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img style="width: 160px; height: 160px;" src="./assets/images/publication-Emiece.png" alt="Emiece"
-                    loading="lazy">
-
-                </figure> -->
-
-
-                <h3 class="project-title">An End-to-End Mutually Interactive Emotion–Cause Pair Extractor via Soft
-                  Sharing</h3>
-
-                <p class="project-category"> Applied Science 2022</p>
-
-                <!-- <p class="project-category">NLP</p> -->
-
-              </a>
-            </li>
-
-            <li class="project-item  active">
-              <a href="https://ieeexplore.ieee.org/abstract/document/9493203/">
-
-                <!-- <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img style="width: 160px; height: 160px;" src="./assets/images/publication-FEDJEM.png" alt="FEDJEM"
-                    loading="lazy">
-                </figure> -->
-
-                <h3 class="project-title">Fast and Privacy-Preserving Federated Joint Estimator of Multi-sUGMs</h3>
-
-                <p class="project-category">IEEE Access 2021</p>
-
-              </a>
-            </li>
-          </ul>
-
-        </section>
-
-        <!--
-          - testimonials
-        -->
-
-        <!-- <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </section> -->
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+        <!-- Main Content Area -->
+        <main>
+            <!-- Home Page -->
+            <div id="home" class="page active">
+                <!-- Profile Header -->
+                <section class="flex flex-col sm:flex-row items-center gap-8 mb-12 fade-in-section">
+                    <!-- Replace with your profile picture path -->
+                    <img class="w-32 h-32 rounded-full object-cover shadow-lg" src="data/images/avatar/avatar-mty-2025.png" alt="Tianyi Ma 2025" onerror="this.onerror=null;this.src='data/images/icon-owl-2.png';">
+                    <div class="flex-1">
+                        <h1 class="text-4xl font-bold text-gray-900">Tianyi Ma</h1>
+                        <p class="text-lg text-gray-600 mt-1">Ph.D. Student in Computer Science and Engineering</p>
+                        <p class="text-md text-gray-500">Michigan State University</p>
+                        <!-- UPDATED ICONS -->
+                        <div class="flex space-x-4 mt-4">
+                            <a href="mailto:matiany3@msu.edu" class="text-gray-500 hover:text-blue-600" title="Email"><i data-lucide="mail" class="w-6 h-6"></i></a>
+                            <a href="https://scholar.google.com/citations?user=HB7kZ3oAAAAJ&hl=en" class="text-gray-500 hover:text-blue-600" title="Google Scholar">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5L12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9 12 9s-5.548 2.249-6.758 4.769zM12 10c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3z"/></svg>
+                            </a>
+                            <a href="https://github.com/SueMarsR" class="text-gray-500 hover:text-gray-900" title="GitHub"><i data-lucide="github" class="w-6 h-6"></i></a>
+                            <a href="https://www.linkedin.com/in/tianyi-ma-272156293/" class="text-gray-500 hover:text-blue-700" title="LinkedIn"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                            <!-- Link to your CV pdf -->
+                            <a href="https://drive.google.com/file/d/1nQ38jcd-v4PPsT9PSWT6BPgnjudUMfIe/view?usp=share_link" class="text-gray-500 hover:text-red-600" title="Download CV"><i data-lucide="file-text" class="w-6 h-6"></i></a>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- About Me -->
+                <section class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section" style="animation-delay: 100ms;">
+                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">About Me</h2>
+                    <p class="text-gray-700 leading-relaxed space-y-4">
+                        I am a Ph.D. Student in the Department of Computer Science and Engineering at Michigan State University, 
+                        advised by <a href="https://www.cse.msu.edu/~kordjams/" target="_blank" class="text-blue-600 hover:underline">
+                            Prof. Parisa Kordjamshidi
+                        </a>. 
+                        My research interests include Natural Language Processing, Multimodal Reasoning and Agents, and Vision-and-Language Navigation.
+                    </p>
+                </section>
+
+                <!-- News Section -->
+                <section class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section" style="animation-delay: 200ms;">
+                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">News</h2>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="font-semibold text-gray-500 w-28 shrink-0">Aug 2025</span>
+                            <span>One paper was accepted to EMNLP 2025 Main.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="font-semibold text-gray-500 w-28 shrink-0">Jul 2025</span>
+                            <span>One paper was accepted to ACL 2025 Findings.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="font-semibold text-gray-500 w-28 shrink-0">Feb 2025</span>
+                            <span>One paper was accepted to CogSci 2025.</span>
+                        </li>
+                         <!-- Add new news items here -->
+                    </ul>
+                </section>
+
+                <!-- Recent Publications Section on Home Page -->
+                <section class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section" style="animation-delay: 400ms;">
+                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">Recent Publications</h2>
+                    <!-- This div will be populated by JavaScript -->
+                    <div id="recent-publications-list" class="space-y-6"></div>
+
+                    <div class="text-center mt-6">
+                        <a onclick="showPage('publications')" class="text-blue-600 font-semibold hover:underline cursor-pointer">View all publications &rarr;</a>
+                    </div>
+                </section>
+
+                <!-- Experience Section -->
+                <section class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section" style="animation-delay: 300ms;">
+                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">Experience</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold text-lg">Visiting Scholar</h3>
+                            <p class="text-gray-600">UCLA NLP & PLUS lab, Aug 2025 - Dec 2025</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Teaching Assistant</h3>
+                            <p class="text-gray-600">Michigan State University, CSE 380, Spring 2025 </p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-lg">Teaching Assistant</h3>
+                            <p class="text-gray-600">Michigan State University, CSE 325, Fall 2024</p>
+                        </div>
+                    </div>
+                </section>
             </div>
 
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
+            <!-- Publications Page -->
+            <div id="publications" class="page">
+                <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center fade-in-section">Selected Publications</h1>
+                <!-- This div will be populated by JavaScript -->
+                <div id="publications-list" class="space-y-8"></div>
             </div>
 
-          </section>
-
-        </div>
-
-
-        <!--
-          - clients
-        -->
-
-        <!-- <section class="clients">
-
-          <h3 class="h3 clients-title">Clients</h3>
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-1-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-2-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-3-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-4-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-5-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-6-color.png" alt="client logo">
-              </a>
-            </li>
-
-          </ul>
-
-        </section> -->
-
-      </article>
+            <!-- Publications Page -->
+            <!-- <div id="publications" class="page">
+                <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center fade-in-section">Selected Publications</h1>
+                <div class="space-y-8"> -->
+                    <!-- Publication Item -->
+                    <!-- <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in-section">
+                        <img src="data/images/pub/publication-SkillNav.png" alt="Paper Thumbnail" class="md:w-1/4 w-full h-48 md:h-auto object-cover" onerror="this.onerror=null;this.src='data/images/icon-owl-2.png';">
+                        <div class="p-6 flex-1">
+                            <h2 class="text-xl font-semibold text-blue-700 mb-2">Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents</h2>
+                            <p class="text-gray-700 mb-3 publication-authors"><span class="author-me">Tianyi Ma</span>, Yue Zhang, Zehao Wang, Parisa Kordjamshidi</p>
+                            <p class="text-gray-600 italic mb-4">Preprint</p>
+                            <div class="space-x-4">
+                                <a href="https://arxiv.org/abs/2508.07642" class="font-semibold text-blue-600 hover:underline">[PDF]</a>
+                                <a href="https://hlr.github.io/SkillNav/" class="font-semibold text-blue-600 hover:underline">[Project]</a>
+                                <a href="https://github.com/HLR/SkillNav" class="font-semibold text-blue-600 hover:underline">[Code]</a>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- Publication Item -->
+                    <!-- <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in-section">
+                        <img src="data/pub-vln.png" alt="Paper Thumbnail" class="md:w-1/4 w-full h-48 md:h-auto object-cover" onerror="this.onerror=null;this.src='data/images/icon-owl-2.png';">
+                        <div class="p-6 flex-1">
+                            <h2 class="text-xl font-semibold text-blue-700 mb-2">Vision-and-Language Navigation with Analogical Textual Descriptions in LLMs</h2>
+                            <p class="text-gray-700 mb-3 publication-authors">Yue Zhang, <span class="author-me">Tianyi Ma</span>, Zun Wang, Yanyuan Qiao, Parisa Kordjamshidi</p>
+                            <p class="text-gray-600 italic mb-4">EMNLP 2025</p>
+                            <div class="space-x-4">
+                                <a href="#" class="font-semibold text-blue-600 hover:underline">[PDF]</a>
+                    
+                            </div>
+                        </div>
+                    </div> -->
+                     
+                    <!-- Publication Item -->
+                    <!-- <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in-section">
+                        <img src="data/pub-vln.png" alt="Paper Thumbnail" class="md:w-1/4 w-full h-48 md:h-auto object-cover" onerror="this.onerror=null;this.src='data/images/icon-owl-2.png';">
+                        <div class="p-6 flex-1">
+                            <h2 class="text-xl font-semibold text-blue-700 mb-2">RASPberry: Retrieval-Augmented Monte Carlo Tree Self-Play with Reasoning Consistency for Multi-Hop Question Answering</h2>
+                            <p class="text-gray-700 mb-3 publication-authors">Baixuan Li, Yunlong Fan, <span class="author-me">Tianyi Ma</span>, Miao Gao, Chuanqi Shi, Zhiqiang Gao</p>
+                            <p class="text-gray-600 italic mb-4">ACL 2025 Findings</p>
+                            <div class="space-x-4">
+                                <a href="https://aclanthology.org/2025.findings-acl.587/" class="font-semibold text-blue-600 hover:underline">[PDF]</a>
+                                <a href="https://aclanthology.org/2025.findings-acl.587/" class="font-semibold text-blue-600 hover:underline">[Code]</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
 
 
-
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+            <!-- Photography Page -->
+            <div id="photography" class="page">
+                 <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center fade-in-section">My Photography</h1>
+                <div class="relative w-full max-w-3xl mx-auto bg-white p-4 rounded-lg shadow-lg mb-8 fade-in-section">
+                    <div id="gallery-image-container" class="aspect-w-4 aspect-h-3">
+                        <!-- Image will be injected here by JS -->
+                    </div>
+                    <button onclick="prevPhoto()" class="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 transition">
+                        <i data-lucide="chevron-left" class="h-6 w-6"></i>
+                    </button>
+                    <button onclick="nextPhoto()" class="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 transition">
+                        <i data-lucide="chevron-right" class="h-6 w-6"></i>
+                    </button>
+                </div>
+                <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg fade-in-section" style="animation-delay: 100ms;">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">About My Photography</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        Photography has been a passion of mine for many years. I love capturing the beauty of nature and urban landscapes. My work focuses on finding unique perspectives and playing with light and shadow to create compelling images.
+                    </p>
+                </div>
             </div>
-
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Southeast University</h4>
-
-              <span>Sep.2023 - Jun.2024</span>
-
-              <p class="timeline-text">
-                M.S, Artificial Intelligence
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">University of California, Los Angeles</h4>
-
-              <span>Mar.2022 - May.2022</span>
-
-              <p class="timeline-text">
-                Exchange, Data Science, 97/100
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Southeast University</h4>
-
-              <span>Aug.2019 - Jun.2023</span>
-
-              <p class="timeline-text">
-                B.S., Artificial Intelligence, 88.33/100
-              </p>
-
-            </li>
-            <!-- 
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">High school of art and design</h4>
-
-              <span>1602 — 1604</span>
-
-              <p class="timeline-text">
-                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-                magni dolores
-                eos.
-              </p>
-
-            </li> -->
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Research Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Federated robust gradient difference compression</h4>
-
-              <span>Nov.2022 - Jun.2023</span>
-
-              <p class="timeline-text">
-                Proposed FedGraD, which leverages gradient difference compression and combines robust aggregation
-                rules
-                in federated
-                learning settings, avoids information loss, mitigates the communication bottleneck, and at the same
-                time
-                tolerates
-                popular Byzantine attacks.
-                <br>
-                <!-- <br> -->
-                Designed the pipeline of FedGraD, and analyzed four different attack setups on three datasets.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Robust Spiking Neural Networks framework under noise and adversarial
-                attacks</h4>
-
-              <span>April.2022 - Feb.2023</span>
-
-              <p class="timeline-text">
-                Designed an inherently robust model with channel-wise activation rcalibration to overcome the
-                performance flaws of
-                Spiking Neural Networks by establishing inter-neuron connections and refining the
-                diverse activation
-                without additional training.
-                Provide insights into the interpretability of attacks.
-                <br>
-                Achieved SOTA performance on MNIST with 99.52% accuracy and successfully defeats 6 SOTA attacks on
-                standard benchmarks, ranging from a single attack to multiple attacks.
-                <br>
-                Explored the comparison of DNNs and SNNs, built the framework of CARE, and plotted the experimental
-                results.
-
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Mutually interactive Emotion–Cause Pair Extractor via soft sharing
-              </h4>
-
-              <span>May.2022 - Sep.2022</span>
-
-              <p class="timeline-text">
-                Proposed an end-to-end soft-shared Emotion–Cause Pair Extractor framework and extends the framework to
-                be
-                compatible with language models. The performance is improved by 8.64% with essentially the same number
-                of
-                parameters; a level close to that of the SOTA method is achieved with 11.5% of the number of trained
-                parameters.
-                <br>
-                Organized the derivation of formulas, wrote the entire paper, revised it and added experiments after
-                submission.
-                <br>
-                Extended the framework from Bi-LSTM to BERT with experimental validation.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Brain research based on deep learning interpretability</h4>
-
-              <span>Oct.2021 - May.2022
-              </span>
-
-              <p class="timeline-text">
-                Simulated the intra-brain features of monkeys during playing Pac-Man by deep learning model, and
-                predicted monkeys’
-                decisions using ConvRNN. Predictive accuracy of monkey decision-making under three Pac-Man behaviors
-                improved by
-                4% compared to previous methods combined.
-                <br>
-                Gave an interpretable analysis of deep neural networks by generating the monkey’s attention through
-                Grad-CAM.
-
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Time series data operation and maintenance analysis</h4>
-
-              <span>Jun.2021 - Oct.2021</span>
-
-              <p class="timeline-text">
-                Designed the anomaly detection algorithm: using Fast Fourier Transform to compute spectral residuals
-                against the
-                anomalous data, and constructing a discriminator for spectral residual thresholds end-to-end for
-                anomaly
-                detection.
-                <br>
-                Compared with the baseline method, it improves 36.1% and 68.8%on KPI and Yahoo datasets, respectively.
-                <br>
-                Won Grand Prize of the 17th “Challenge Cup” National Extracurricular Academic and Technological Works
-                Competition
-                for College Students (Top 5 in China).
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Federated joint estimator of multi-sUGMs</h4>
-
-              <span>Dec.2020 - Jul.2021</span>
-
-              <p class="timeline-text">
-                Trained the sparse Undirected Graphical Model methods over a massive network, and predicts several
-                informative groups
-                of connectomes based on the real-world dataset. While maintaining data security, the computation cost
-                is
-                reduced by
-                15x, 54x respectively compared to the Baselines.
-                <br>
-                Analyzed and processed simulated and real data of neural connections in the brain using Nilearn.
-                <br>
-                Plotted figures of experimental predicted results, and drew the methodological framework and schematic
-                diagram of
-                experimental operations. Analyzed and processed simulated and real data of neural connections in the
-                brain using Nilearn.
-              </p>
-
-            </li>
-
-            <!-- <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Web designer</h4>
-
-              <span>2010 — 2013</span>
-
-              <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
-
-            </li> -->
-
-          </ol>
-
-        </section>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Programming</h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Web Development</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Communication</h5>
-                <data value="90">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Collaboration</h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-      <!-- #PUBLICATIONS   -->
-
-      <article class="publications" data-page="publications">
-        <header>
-          <h2 class="h2 article-title">Publications</h2>
-        </header>
-
-        <section class="projects">
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>NLP</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Efficiency</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Safety</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>NLP</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Efficiency</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Safety</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="efficiency">
-              <!-- category should be written in lowcase -->
-              <a href="https://ieeexplore.ieee.org/abstract/document/10152826/">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img style="object-fit: cover; height: 160px;" src="./assets/images/publication-FedGraD.png"
-                    alt="FedGrad" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Applying Robust Gradient Difference Compression to Federated Learning</h3>
-
-                <p class="project-category">Yueyao Chen, Beilun Wang*, <b>Tianyi Ma</b>, Cheng Chen</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="nlp">
-              <a href="https://www.mdpi.com/2076-3417/12/18/8998">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img style="object-fit: cover; height: 160px" src="./assets/images/publication-Emiece.png"
-                    alt="Emiece" loading="lazy">
-
-                </figure>
-
-                <h3 class="project-title">An End-to-End Mutually Interactive Emotion–Cause Pair Extractor via Soft
-                  Sharing</h3>
-
-                <p class="project-category"> Beilun Wang*, <b>Tianyi Ma</b>, Zhengxuan Lu, Haoqing Xu</p>
-
-                <!-- <p class="project-category">NLP</p> -->
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="safety">
-              <a href="https://ieeexplore.ieee.org/abstract/document/9493203/">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img style="object-fit: cover; height: 160px" src="./assets/images/publication-FEDJEM.png"
-                    alt="FEDJEM" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Fast and Privacy-Preserving Federated Joint Estimator of Multi-sUGMs</h3>
-
-                <p class="project-category">Xiao Tan*, <b> Tianyi Ma</b>, Tongtong Su</p>
-                <!-- <p class="project-category">Safety</p> -->
-
-              </a>
-            </li>
-
-
-          </ul>
-
-        </section>
-
-      </article>
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <!-- <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Finance</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Orizon</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Fundo</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Brawlhalla</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article> -->
-
-
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <!-- <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis
-                    suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article> -->
-
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3387.753819082043!2d118.81723007480248!3d31.886109974048654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b58570d85f57c9%3A0xaa409589c02cc71a!2sSoutheast%20University!5e0!3m2!1sen!2sjp!4v1703095978416!5m2!1sen!2sjp"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section>
-
-      </article>
-
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 mt-16 pt-8 border-t">
+            <p>&copy; 2025 Tianyi Ma. All rights reserved.</p>
+        </footer>
     </div>
 
-  </main>
+    <script>
+        // --- Single Source of Truth for Publications ---
+        const publications = [
+            {
+                "title": "Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents",
+                "authors": "<span class=\"author-me\">Tianyi Ma</span>, Yue Zhang, Zehao Wang, Parisa Kordjamshidi",
+                "venue": "Preprint",
+                "image": "data/images/pub/publication-SkillNav.png",
+                "links": {
+                    "pdf": "https://arxiv.org/abs/2508.07642",
+                    "project": "https://hlr.github.io/SkillNav/",
+                    "code": "https://github.com/HLR/SkillNav"
+                }
+            },
+            {
+                "title": "Vision-and-Language Navigation with Analogical Textual Descriptions in LLMs",
+                "authors": "Yue Zhang, <span class=\"author-me\">Tianyi Ma</span>, Zun Wang, Yanyuan Qiao, Parisa Kordjamshidi",
+                "venue": "EMNLP 2025",
+                "image": "assets/pub-vln.png",
+                "links": {
+                    "pdf": "#"
+                }
+            },
+            {
+                "title": "RASPberry: Retrieval-Augmented Monte Carlo Tree Self-Play with Reasoning Consistency for Multi-Hop Question Answering",
+                "authors": "Baixuan Li, Yunlong Fan, <span class=\"author-me\">Tianyi Ma</span>, Miao Gao, Chuanqi Shi, Zhiqiang Gao",
+                "venue": "ACL 2025 Findings",
+                "image": "assets/pub-vln.png",
+                "links": {
+                    "pdf": "https://aclanthology.org/2025.findings-acl.587/",
+                    "code": "https://aclanthology.org/2025.findings-acl.587/"
+                }
+            }
+        ];
+
+        // --- Dynamic Content Population ---
+
+        function populatePublications(publications) {
+            const fullListContainer = document.getElementById('publications-list');
+            const recentListContainer = document.getElementById('recent-publications-list');
+            
+            if (fullListContainer) {
+                let fullListHTML = '';
+                publications.forEach((pub, index) => {
+                    const linksHTML = Object.entries(pub.links).map(([name, url]) => 
+                        `<a href="${url}" class="font-semibold text-blue-600 hover:underline">[${name.charAt(0).toUpperCase() + name.slice(1)}]</a>`
+                    ).join('\n');
+
+                    fullListHTML += `
+                        <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in-section" style="animation-delay: ${index * 100}ms;">
+                            <img src="${pub.image}" alt="Paper Thumbnail" class="md:w-1/4 w-full h-48 md:h-auto object-cover" onerror="this.onerror=null;this.src='data/images/icon-owl-2.png';">
+                            <div class="p-6 flex-1">
+                                <h2 class="text-xl font-semibold text-blue-700 mb-2">${pub.title}</h2>
+                                <p class="text-gray-700 mb-3 publication-authors">${pub.authors}</p>
+                                <p class="text-gray-600 italic mb-4">${pub.venue}</p>
+                                <div class="space-x-4 uppercase">${linksHTML}</div>
+                            </div>
+                        </div>`;
+                });
+                fullListContainer.innerHTML = fullListHTML;
+            }
+
+            if (recentListContainer) {
+                let recentListHTML = '';
+                // Show the first 2 publications on the homepage
+                publications.slice(0, 2).forEach(pub => {
+                    recentListHTML += `
+                        <div class="flex flex-col sm:flex-row items-center gap-4">
+                            <img src="${pub.image}" alt="Paper Thumbnail" class="w-full sm:w-32 h-auto rounded-md object-cover" onerror="this.onerror=null;this.src='data/images/icon-owl-2.png';">
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-blue-700">${pub.title}</h3>
+                                <p class="text-sm text-gray-700 publication-authors">${pub.authors}</p>
+                                <p class="text-sm text-gray-600 italic">${pub.venue}</p>
+                            </div>
+                        </div>`;
+                });
+                recentListContainer.innerHTML = recentListHTML;
+            }
+        }
+
+        // --- Page Navigation ---
+        const pages = document.querySelectorAll('.page');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function showPage(pageId) {
+            // Hide all pages
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            // Show the selected page
+            const newPage = document.getElementById(pageId);
+            if (newPage) {
+                newPage.classList.add('active');
+                // Add fade-in animation to all sections within the new page
+                newPage.querySelectorAll('.fade-in-section').forEach((section, index) => {
+                    section.style.animation = 'none'; // Reset animation
+                    section.offsetHeight; // Trigger reflow
+                    section.style.animation = `fadeIn 0.6s ease-out forwards ${index * 100}ms`;
+                });
+            }
+            // Update active state for nav links
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('onclick') === `showPage('${pageId}')`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // --- Photography Gallery ---
+        const photos = [
+          
+          { src: 'data/images/photograph/changzhou_center.JPG', alt: 'changzhou_center' },
+        //   { src: 'data/images/photograph/changzhou_tower.jpg', alt: 'changzhou_tower' },
+          { src: 'data/images/photograph/changzhou_lantern.jpg', alt: 'changzhou_lantern' },
+          { src: 'data/images/photograph/seu-CS.JPG', alt: 'seu-CS' },
+          { src: 'data/images/photograph/chuanxi_siguniangshan.jpg', alt: 'chuanxi_siguniangshan' },
+        ];
+        let currentPhotoIndex = 0;
+        const galleryContainer = document.getElementById('gallery-image-container');
+
+        function displayPhoto() {
+            if(galleryContainer) {
+                const photo = photos[currentPhotoIndex];
+                galleryContainer.innerHTML = `<img src="${photo.src}" alt="${photo.alt}" class="w-full h-full object-cover rounded-lg">`;
+            }
+        }
+
+        function nextPhoto() {
+            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+            displayPhoto();
+        }
+
+        function prevPhoto() {
+            currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+            displayPhoto();
+        }
 
 
+        // --- Initial Setup ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide icons
+            lucide.createIcons();
+            
+            // Set initial page
+            showPage('home');
 
+            // Initialize the photo gallery
+            displayPhoto();
 
+            // This now uses the 'publications' variable defined at the top of the script
+            populatePublications(publications);
+        });
 
-
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+    </script>
 </body>
-
 </html>

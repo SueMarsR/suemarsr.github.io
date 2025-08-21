@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents",
+        "authors": "<span class=\"author-me\">Tianyi Ma</span>, Yue Zhang, Zehao Wang, Parisa Kordjamshidi",
+        "venue": "Preprint",
+        "image": "assets/images/pub/publication-SkillNav.png",
+        "links": {
+            "pdf": "https://arxiv.org/abs/2508.07642",
+            "project": "https://hlr.github.io/SkillNav/",
+            "code": "https://github.com/HLR/SkillNav"
+        }
+    },
+    {
+        "title": "Vision-and-Language Navigation with Analogical Textual Descriptions in LLMs",
+        "authors": "Yue Zhang, <span class=\"author-me\">Tianyi Ma</span>, Zun Wang, Yanyuan Qiao, Parisa Kordjamshidi",
+        "venue": "EMNLP 2025",
+        "image": "assets/pub-vln.png",
+        "links": {
+            "pdf": "#"
+        }
+    },
+    {
+        "title": "RASPberry: Retrieval-Augmented Monte Carlo Tree Self-Play with Reasoning Consistency for Multi-Hop Question Answering",
+        "authors": "Baixuan Li, Yunlong Fan, <span class=\"author-me\">Tianyi Ma</span>, Miao Gao, Chuanqi Shi, Zhiqiang Gao",
+        "venue": "ACL 2025 Findings",
+        "image": "assets/pub-vln.png",
+        "links": {
+            "pdf": "https://aclanthology.org/2025.findings-acl.587/",
+            "code": "https://aclanthology.org/2025.findings-acl.587/"
+        }
+    }
+]
