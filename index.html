@@ -106,13 +106,13 @@
                         <!-- UPDATED ICONS -->
                         <div class="flex space-x-4 mt-4">
                             <a href="mailto:matiany3@msu.edu" class="text-gray-500 hover:text-blue-600" title="Email"><i data-lucide="mail" class="w-6 h-6"></i></a>
-                            <a href="https://scholar.google.com/citations?user=HB7kZ3oAAAAJ&hl=en" class="text-gray-500 hover:text-blue-600" title="Google Scholar">
+                            <a href="https://scholar.google.com/citations?user=HB7kZ3oAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600" title="Google Scholar">
                                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5L12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9 12 9s-5.548 2.249-6.758 4.769zM12 10c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3z"/></svg>
                             </a>
-                            <a href="https://github.com/SueMarsR" class="text-gray-500 hover:text-gray-900" title="GitHub"><i data-lucide="github" class="w-6 h-6"></i></a>
-                            <a href="https://www.linkedin.com/in/tianyi-ma-272156293/" class="text-gray-500 hover:text-blue-700" title="LinkedIn"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                            <a href="https://github.com/SueMarsR" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-900" title="GitHub"><i data-lucide="github" class="w-6 h-6"></i></a>
+                            <a href="https://www.linkedin.com/in/tianyi-ma-272156293/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-700" title="LinkedIn"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
                             <!-- Link to your CV pdf -->
-                            <a href="https://drive.google.com/file/d/1nQ38jcd-v4PPsT9PSWT6BPgnjudUMfIe/view?usp=share_link" class="text-gray-500 hover:text-red-600" title="Download CV"><i data-lucide="file-text" class="w-6 h-6"></i></a>
+                            <a href="https://drive.google.com/file/d/1nQ38jcd-v4PPsT9PSWT6BPgnjudUMfIe/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-red-600" title="Download CV"><i data-lucide="file-text" class="w-6 h-6"></i></a>
                         </div>
                     </div>
                 </section>
@@ -138,7 +138,7 @@
                             <span>One paper was accepted to EMNLP 2025 Main.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="font-semibold text-gray-500 w-28 shrink-0">Jul 2025</span>
+                            <span class="font-semibold text-gray-500 w-28 shrink-0">May 2025</span>
                             <span>One paper was accepted to ACL 2025 Findings.</span>
                         </li>
                         <li class="flex items-start">
@@ -311,7 +311,7 @@
                 let fullListHTML = '';
                 publications.forEach((pub, index) => {
                     const linksHTML = Object.entries(pub.links).map(([name, url]) => 
-                        `<a href="${url}" class="font-semibold text-blue-600 hover:underline">[${name.charAt(0).toUpperCase() + name.slice(1)}]</a>`
+                        `<a href="${url}" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 hover:underline">[${name.charAt(0).toUpperCase() + name.slice(1)}]</a>`
                     ).join('\n');
 
                     fullListHTML += `
