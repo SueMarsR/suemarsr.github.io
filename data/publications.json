@@ -1,5 +1,16 @@
 [
     {
+        "title": "MMGR: Multi-Modal Generative Reasoning",
+        "authors": "Zefan Cai*, Haoyi Qiu*, <span class=\"author-me\">Tianyi Ma*</span>, Haozhe Zhao, Gengze Zhou, Kung-Hsiang Huang, Parisa Kordjamshidi, Xiao Wen, Jiuxiang Gu, Nanyun Peng, Junjie Hu", 
+        "venue": "Preprint",
+        "links": {
+            "pdf": "https://github.com/Zefan-Cai/MMGR/blob/main/MMGR.pdf",
+            "project": "",
+            "code": "https://github.com/SueMarsR/video_reasoning_new"
+        }
+
+    },
+    {
         "title": "Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents",
         "authors": "<span class=\"author-me\">Tianyi Ma</span>, Yue Zhang, Zehao Wang, Parisa Kordjamshidi",
         "venue": "Preprint",
@@ -16,7 +27,7 @@
         "venue": "EMNLP 2025",
         "image": "assets/pub-vln.png",
         "links": {
-            "pdf": "#"
+            "pdf": "https://aclanthology.org/2025.emnlp-main.759/"
         }
     },
     {
