@@ -4,8 +4,8 @@
         "authors": "Zefan Cai*, Haoyi Qiu*, <span class=\"author-me\">Tianyi Ma*</span>, Haozhe Zhao, Gengze Zhou, Kung-Hsiang Huang, Parisa Kordjamshidi, Xiao Wen, Jiuxiang Gu, Nanyun Peng, Junjie Hu", 
         "venue": "Preprint",
         "links": {
-            "pdf": "https://github.com/Zefan-Cai/MMGR/blob/main/MMGR.pdf",
-            "project": "",
+            "pdf": "https://arxiv.org/abs/2512.14691",
+            "project": "https://zefan-cai.github.io/MMGR.github.io/",
             "code": "https://github.com/SueMarsR/video_reasoning_new"
         }
 
