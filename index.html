@@ -103,6 +103,7 @@
                 <div class="flex items-center space-x-6 text-gray-600">
                     <a onclick="showPage('home')" class="nav-link active">Home</a>
                     <a onclick="showPage('publications')" class="nav-link">Publications</a>
+                    <a onclick="showPage('blog')" class="nav-link">Blog</a>
                     <!-- <a onclick="showPage('experience')" class="nav-link">Experience</a> -->
                     <a onclick="showPage('photography')" class="nav-link">Photography</a>
                 </div>
@@ -151,6 +152,10 @@
                 <section class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section" style="animation-delay: 200ms;">
                     <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">News</h2>
                     <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="font-semibold text-gray-500 w-28 shrink-0">Mar 2026</span>
+                            <span>Added a new <strong>Blog</strong> section with <a href="https://unipat.ai/blog/SWE-Vision" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">SWE-Vision: A Minimal Agent for Advancing Visual Intelligence</a>.</span>
+                        </li>
                         <li class="flex items-start">
                             <span class="font-semibold text-gray-500 w-28 shrink-0">Dec 2025</span>
                             <span>New preprint <a href="https://arxiv.org/abs/2512.14691" target="_blank" class="text-blue-600 hover:underline">"MMGR: Multi-Modal Generative Reasoning"</a> is now on arXiv.</span>
@@ -224,6 +229,22 @@
                 <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center fade-in-section">Selected Publications</h1>
                 <!-- This div will be populated by JavaScript -->
                 <div id="publications-list" class="space-y-8"></div>
+            </div>
+
+            <!-- Blog Page -->
+            <div id="blog" class="page">
+                <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center fade-in-section">Blog</h1>
+                <section class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section" style="animation-delay: 100ms;">
+                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">Reading List</h2>
+                    <ul class="space-y-4 text-gray-700">
+                        <li>
+                            <a href="https://unipat.ai/blog/SWE-Vision" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">
+                                SWE-Vision: A Minimal Agent for Advancing Visual Intelligence
+                            </a>
+                            <p class="text-sm text-gray-600 mt-1">UniPat AI blog post on test-time scaling for visual understanding with code execution.</p>
+                        </li>
+                    </ul>
+                </section>
             </div>
 
             <!-- Publications Page -->
