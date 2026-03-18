@@ -1,0 +1,94 @@
+{
+  "date": "2026-03-18",
+  "timezone": "America/New_York",
+  "title": "Daily Tech Digest",
+  "scope": "last ~3 months momentum (with foundational carry-over)",
+  "rules": {
+    "minGithubStars": 30,
+    "requiredFields": ["paperTitle", "paperLink", "githubLink"]
+  },
+  "sections": [
+    {
+      "name": "Multimodal Reasoning",
+      "items": [
+        {
+          "topic": "Qwen2.5-VL",
+          "paperTitle": "Qwen2.5-VL Technical Report",
+          "paperLink": "https://arxiv.org/search/?query=Qwen2.5-VL&searchtype=all",
+          "githubLink": "https://github.com/QwenLM/Qwen2.5-VL",
+          "githubStars": 18680
+        },
+        {
+          "topic": "InternVL",
+          "paperTitle": "InternVL / InternVL2 papers",
+          "paperLink": "https://arxiv.org/search/?query=InternVL&searchtype=all",
+          "githubLink": "https://github.com/OpenGVLab/InternVL",
+          "githubStars": 9901
+        },
+        {
+          "topic": "MiniCPM-V",
+          "paperTitle": "MiniCPM-V series",
+          "paperLink": "https://arxiv.org/search/?query=MiniCPM-V&searchtype=all",
+          "githubLink": "https://github.com/OpenBMB/MiniCPM-V",
+          "githubStars": 24144
+        }
+      ]
+    },
+    {
+      "name": "Embodied AI",
+      "items": [
+        {
+          "topic": "OpenPI",
+          "paperTitle": "π0: A Vision-Language-Action Flow Model for General Robot Control",
+          "paperLink": "https://arxiv.org/abs/2410.24164",
+          "githubLink": "https://github.com/Physical-Intelligence/openpi",
+          "githubStars": 10726
+        },
+        {
+          "topic": "LeRobot",
+          "paperTitle": "LeRobot docs/research materials",
+          "paperLink": "https://huggingface.co/blog/lerobot",
+          "githubLink": "https://github.com/huggingface/lerobot",
+          "githubStars": 22440
+        },
+        {
+          "topic": "Habitat-Lab",
+          "paperTitle": "Habitat: A Platform for Embodied AI Research",
+          "paperLink": "https://arxiv.org/abs/1904.01201",
+          "githubLink": "https://github.com/facebookresearch/habitat-lab",
+          "githubStars": 2887
+        }
+      ]
+    },
+    {
+      "name": "Claude Code / Gemini application practice",
+      "items": [
+        {
+          "topic": "Claude Code",
+          "paperTitle": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+          "paperLink": "https://arxiv.org/abs/2310.06770",
+          "githubLink": "https://github.com/anthropics/claude-code",
+          "githubStars": 79628
+        },
+        {
+          "topic": "Gemini CLI",
+          "paperTitle": "Gemini: A Family of Highly Capable Multimodal Models",
+          "paperLink": "https://arxiv.org/abs/2312.11805",
+          "githubLink": "https://github.com/google-gemini/gemini-cli",
+          "githubStars": 98238
+        },
+        {
+          "topic": "OpenHands",
+          "paperTitle": "CodeAct/OpenHands related software engineering agent threads",
+          "paperLink": "https://arxiv.org/search/?query=CodeAct+agent+software+engineering&searchtype=all",
+          "githubLink": "https://github.com/All-Hands-AI/OpenHands",
+          "githubStars": 69347
+        }
+      ]
+    }
+  ],
+  "rednote": {
+    "status": "limited-public-signal",
+    "note": "No reliable high-comment Xiaohongshu feed available in current environment; prioritized verifiable GitHub+paper signals."
+  }
+}
