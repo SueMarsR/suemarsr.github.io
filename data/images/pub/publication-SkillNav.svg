@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="SkillNav">
+  <rect width="256" height="256" fill="#E8A317"/>
+
+  <!-- Three skill modules across the top: each represents a specialized navigation skill -->
+  <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="40"  y="32" width="44" height="34" rx="7"/>
+    <rect x="106" y="24" width="44" height="34" rx="7"/>
+    <rect x="172" y="32" width="44" height="34" rx="7"/>
+  </g>
+
+  <!-- Distinct mini-icons inside each module (turn / landmark / direction) -->
+  <g fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Skill 1: turn arrow -->
+    <path d="M52 56 L52 46 L72 46"/>
+    <polyline points="68,42 72,46 68,50"/>
+    <!-- Skill 2: landmark / waypoint -->
+    <circle cx="128" cy="42" r="5" fill="#ffffff" stroke="none"/>
+    <path d="M122 50 L128 56 L134 50" fill="none"/>
+    <!-- Skill 3: forward direction -->
+    <line x1="184" y1="49" x2="204" y2="49"/>
+    <polyline points="200,43 206,49 200,55"/>
+  </g>
+
+  <!-- Mixture: dashed lines converge from the three skills into one agent -->
+  <g fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="4 4">
+    <path d="M62 70 Q92 88 124 100"/>
+    <path d="M128 60 L128 100"/>
+    <path d="M194 70 Q164 88 132 100"/>
+  </g>
+
+  <!-- Agent (mixture output) -->
+  <circle cx="128" cy="106" r="7.5" fill="#ffffff"/>
+
+  <!-- Navigation path the agent follows: a turning route through the environment -->
+  <g fill="none" stroke="#ffffff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M128 114 L128 138 L72 138 L72 168 L188 168"/>
+    <polyline points="180,160 192,168 180,176"/>
+  </g>
+
+  <!-- Waypoints along the navigation path -->
+  <g fill="#E8A317" stroke="#ffffff" stroke-width="3.5">
+    <circle cx="128" cy="138" r="4.5"/>
+    <circle cx="72"  cy="138" r="4.5"/>
+    <circle cx="72"  cy="168" r="4.5"/>
+  </g>
+
+  <text x="128" y="214" font-family="Inter, ui-sans-serif, system-ui, sans-serif"
+        font-size="34" font-weight="700" fill="#ffffff" text-anchor="middle">SkillNav</text>
+</svg>
