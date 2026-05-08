@@ -1,0 +1,9 @@
+{
+  "about": "Photography has been a passion of mine for many years. I love capturing the beauty of nature and urban landscapes. My work focuses on finding unique perspectives and playing with light and shadow to create compelling images.",
+  "photos": [
+    { "src": "https://5ea0275.webp.li/data/images/photograph/compressed/changzhou_center.JPG",        "alt": "changzhou_center" },
+    { "src": "https://5ea0275.webp.li/data/images/photograph/compressed/changzhou_lantern.jpg",       "alt": "changzhou_lantern" },
+    { "src": "https://5ea0275.webp.li/data/images/photograph/compressed/seu-CS.JPG",                  "alt": "seu-CS" },
+    { "src": "https://5ea0275.webp.li/data/images/photograph/compressed/chuanxi_siguniangshan.jpg",   "alt": "chuanxi_siguniangshan" }
+  ]
+}

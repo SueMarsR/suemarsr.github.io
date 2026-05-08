@@ -1,0 +1,15 @@
+{
+  "latest": {
+    "date": "March 2026",
+    "source": "UniPat AI Blog",
+    "title": "SWE-Vision: A Minimal Agent for Advancing Visual Intelligence",
+    "summary": "This post introduces SWE-Vision, a lightweight agent framework for improving visual understanding at test time through code execution. It outlines the core idea, practical setup, and key takeaways for building more capable multimodal systems.",
+    "url": "https://unipat.ai/blog/SWE-Vision"
+  },
+  "archive": [
+    {
+      "title": "SWE-Vision: A Minimal Agent for Advancing Visual Intelligence",
+      "url": "https://unipat.ai/blog/SWE-Vision"
+    }
+  ]
+}

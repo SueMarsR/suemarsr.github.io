@@ -1,0 +1,38 @@
+[
+  {
+    "date": "Apr 2026",
+    "html": "Joining <a href=\"https://unipat.ai\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"link\">UniPat AI</a> as a Research Intern this summer, working on multimodal reasoning in agents."
+  },
+  {
+    "date": "Apr 2026",
+    "html": "Our paper <a href=\"https://arxiv.org/abs/2508.07642\" target=\"_blank\" class=\"link\">\"Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents\"</a> (SkillNav) was accepted to <strong>ACL 2026 Main Conference</strong>."
+  },
+  {
+    "date": "Mar 2026",
+    "html": "Added a new <strong>Blog</strong> section with <a href=\"https://unipat.ai/blog/SWE-Vision\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"link\">SWE-Vision: A Minimal Agent for Advancing Visual Intelligence</a>."
+  },
+  {
+    "date": "Dec 2025",
+    "html": "New preprint <a href=\"https://arxiv.org/abs/2512.14691\" target=\"_blank\" class=\"link\">\"MMGR: Multi-Modal Generative Reasoning\"</a> is now on arXiv."
+  },
+  {
+    "date": "Sep 2025",
+    "html": "Released preprint <a href=\"https://arxiv.org/abs/2508.07642\" target=\"_blank\" class=\"link\">\"Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents\"</a> (SkillNav) on arXiv."
+  },
+  {
+    "date": "Aug 2025",
+    "html": "Start visiting at UCLA NLP Group, supervised by Prof. Kai-wei Chang."
+  },
+  {
+    "date": "Aug 2025",
+    "html": "One paper <a href=\"https://www.arxiv.org/abs/2509.25139\" target=\"_blank\" class=\"link\">\"Vision-and-Language Navigation with Analogical Textual Descriptions in LLMs\"</a> was accepted to EMNLP 2025 Main."
+  },
+  {
+    "date": "May 2025",
+    "html": "One paper <a href=\"https://escholarship.org/uc/item/5pq093wq\" target=\"_blank\" class=\"link\">\"Cognitive Priming Prompting Facilitates Knowledge Elicitation in Multilingual Large Language Models\"</a> was accepted to ACL 2025 Findings."
+  },
+  {
+    "date": "Feb 2025",
+    "html": "One paper was accepted to CogSci 2025."
+  }
+]

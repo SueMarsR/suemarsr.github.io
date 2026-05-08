@@ -1,0 +1,16 @@
+{
+  "name": "Tianyi Ma",
+  "title": "Ph.D. Student in Computer Science and Engineering @ Michigan State University",
+  "avatar": "https://5ea0275.webp.li/data/images/avatar/avatar-mty-2025.png",
+  "favicon": "data/images/icon-owl-2.ico",
+  "navLogo": "data/images/icon-owl-2.ico",
+  "about": "I am a Ph.D. Student in <a href=\"https://hlr.github.io\" target=\"_blank\" class=\"link\">HLR lab</a> in the Department of Computer Science and Engineering at Michigan State University, advised by <a href=\"https://www.cse.msu.edu/~kordjams/\" target=\"_blank\" class=\"link\">Prof. Parisa Kordjamshidi</a>. My research interests include Natural Language Processing, Multimodal Reasoning and Agents, and Vision-and-Language Navigation.",
+  "socials": [
+    { "type": "email",   "href": "mailto:matiany3@msu.edu",                                            "title": "Email" },
+    { "type": "scholar", "href": "https://scholar.google.com/citations?user=HB7kZ3oAAAAJ&hl=en",       "title": "Google Scholar" },
+    { "type": "github",  "href": "https://github.com/SueMarsR",                                        "title": "GitHub" },
+    { "type": "linkedin","href": "https://www.linkedin.com/in/tianyi-ma-272156293/",                   "title": "LinkedIn" },
+    { "type": "cv",      "href": "https://drive.google.com/file/d/1ds7Y5QOufSEobc57BNjpiX9WClODVf5f/view?usp=share_link", "title": "Download CV" }
+  ],
+  "footer": "© 2025 Tianyi Ma. All rights reserved."
+}

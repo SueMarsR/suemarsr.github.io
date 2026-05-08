@@ -1,43 +1,87 @@
 [
-    {
-        "title": "MMGR: Multi-Modal Generative Reasoning",
-        "authors": "Zefan Cai*, Haoyi Qiu*, <span class=\"author-me\">Tianyi Ma*</span>, Haozhe Zhao, Gengze Zhou, Kung-Hsiang Huang, Parisa Kordjamshidi, Xiao Wen, Jiuxiang Gu, Nanyun Peng, Junjie Hu", 
-        "venue": "Preprint",
-        "links": {
-            "pdf": "https://arxiv.org/abs/2512.14691",
-            "project": "https://zefan-cai.github.io/MMGR.github.io/",
-            "code": "https://github.com/SueMarsR/video_reasoning_new"
-        }
-
-    },
-    {
-        "title": "Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents",
-        "authors": "<span class=\"author-me\">Tianyi Ma</span>, Yue Zhang, Zehao Wang, Parisa Kordjamshidi",
-        "venue": "ACL 2026 Main Conference",
-        "image": "assets/images/pub/publication-SkillNav.png",
-        "links": {
-            "pdf": "https://arxiv.org/abs/2508.07642",
-            "project": "https://hlr.github.io/SkillNav/",
-            "code": "https://github.com/HLR/SkillNav"
-        }
-    },
-    {
-        "title": "Vision-and-Language Navigation with Analogical Textual Descriptions in LLMs",
-        "authors": "Yue Zhang, <span class=\"author-me\">Tianyi Ma</span>, Zun Wang, Yanyuan Qiao, Parisa Kordjamshidi",
-        "venue": "EMNLP 2025",
-        "image": "assets/pub-vln.png",
-        "links": {
-            "pdf": "https://aclanthology.org/2025.emnlp-main.759/"
-        }
-    },
-    {
-        "title": "RASPberry: Retrieval-Augmented Monte Carlo Tree Self-Play with Reasoning Consistency for Multi-Hop Question Answering",
-        "authors": "Baixuan Li, Yunlong Fan, <span class=\"author-me\">Tianyi Ma</span>, Miao Gao, Chuanqi Shi, Zhiqiang Gao",
-        "venue": "ACL 2025 Findings",
-        "image": "assets/pub-vln.png",
-        "links": {
-            "pdf": "https://aclanthology.org/2025.findings-acl.587/",
-            "code": "https://aclanthology.org/2025.findings-acl.587/"
-        }
+  {
+    "title": "MMGR: Multi-Modal Generative Reasoning",
+    "authors": [
+      { "name": "Zefan Cai",          "equalContrib": true },
+      { "name": "Haoyi Qiu",          "equalContrib": true },
+      { "name": "Tianyi Ma",          "equalContrib": true, "isMe": true },
+      { "name": "Haozhe Zhao" },
+      { "name": "Gengze Zhou" },
+      { "name": "Kung-Hsiang Huang" },
+      { "name": "Parisa Kordjamshidi" },
+      { "name": "Xiao Wen" },
+      { "name": "Jiuxiang Gu" },
+      { "name": "Nanyun Peng" },
+      { "name": "Junjie Hu" }
+    ],
+    "venue": "Preprint",
+    "image": "data/images/pub/publication-MMGR.svg",
+    "links": {
+      "pdf":     "https://arxiv.org/abs/2512.14691",
+      "project": "https://zefan-cai.github.io/MMGR.github.io/",
+      "code":    "https://github.com/SueMarsR/video_reasoning_new"
     }
+  },
+  {
+    "title": "Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents",
+    "authors": [
+      { "name": "Tianyi Ma", "isMe": true },
+      { "name": "Yue Zhang" },
+      { "name": "Zehao Wang" },
+      { "name": "Parisa Kordjamshidi" }
+    ],
+    "venue": "ACL 2026 Main Conference",
+    "image": "data/images/pub/publication-SkillNav.png",
+    "links": {
+      "pdf":     "https://arxiv.org/abs/2508.07642",
+      "project": "https://hlr.github.io/SkillNav/",
+      "code":    "https://github.com/HLR/SkillNav"
+    }
+  },
+  {
+    "title": "Vision-and-Language Navigation with Analogical Textual Descriptions in LLMs",
+    "authors": [
+      { "name": "Yue Zhang" },
+      { "name": "Tianyi Ma", "isMe": true },
+      { "name": "Zun Wang" },
+      { "name": "Yanyuan Qiao" },
+      { "name": "Parisa Kordjamshidi" }
+    ],
+    "venue": "EMNLP 2025",
+    "image": "data/images/pub/publication-VLN-Analogy.svg",
+    "links": {
+      "pdf": "https://aclanthology.org/2025.emnlp-main.759/"
+    }
+  },
+  {
+    "title": "RASPberry: Retrieval-Augmented Monte Carlo Tree Self-Play with Reasoning Consistency for Multi-Hop Question Answering",
+    "authors": [
+      { "name": "Baixuan Li" },
+      { "name": "Yunlong Fan" },
+      { "name": "Tianyi Ma", "isMe": true },
+      { "name": "Miao Gao" },
+      { "name": "Chuanqi Shi" },
+      { "name": "Zhiqiang Gao" }
+    ],
+    "venue": "ACL 2025 Findings",
+    "image": "data/images/pub/publication-RASPberry.svg",
+    "links": {
+      "pdf":  "https://aclanthology.org/2025.findings-acl.587/",
+      "code": "https://aclanthology.org/2025.findings-acl.587/"
+    }
+  },
+  {
+    "title": "Cognitive Priming Prompting Facilitates Knowledge Elicitation in Multilingual Large Language Models",
+    "authors": [
+      { "name": "Baixuan Li" },
+      { "name": "Yunlong Fan" },
+      { "name": "Tianyi Ma", "isMe": true },
+      { "name": "Zhiqiang Gao" }
+    ],
+    "venue": "CogSci 2025",
+    "image": "data/images/pub/publication-CogPrime.svg",
+    "links": {
+      "pdf": "https://escholarship.org/uc/item/5pq093wq"
+    }
+  }
 ]

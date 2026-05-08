@@ -1,0 +1,95 @@
+/* =========================================================================
+   Tianyi Ma — homepage styles
+   Tailwind utility classes carry most of the layout; this file holds only
+   custom rules that don't map cleanly to utilities.
+   ========================================================================= */
+
+:root {
+  --color-accent: #2563eb;        /* blue-600 */
+  --color-accent-strong: #1d4ed8; /* blue-700 */
+  --color-text: #1f2937;          /* gray-800 */
+  --color-muted: #6b7280;         /* gray-500 */
+  --color-bg: #f8fafc;            /* slate-50 */
+  --radius-card: 0.75rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ---------- Page switching ---------- */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ---------- Section fade-in ---------- */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Navigation links ---------- */
+.nav-link {
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+  color: var(--color-accent);
+}
+
+.nav-link.active {
+  color: var(--color-accent);
+  font-weight: 500;
+  border-bottom-color: var(--color-accent);
+}
+
+/* ---------- Inline content links ---------- */
+.link {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Publication author list ---------- */
+.publication-authors {
+  font-style: italic;
+}
+
+.publication-authors .author-me {
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ---------- Misc utilities ---------- */
+.uppercase { text-transform: uppercase; }
+
+/* Slightly tighter spacing on news date column for narrow screens */
+.news-date {
+  font-weight: 600;
+  color: var(--color-muted);
+  width: 7rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .news-date { width: 5.5rem; }
+}

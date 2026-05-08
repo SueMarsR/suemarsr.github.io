@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="VLN Analogy">
+  <rect width="256" height="256" fill="#0F9D9D"/>
+
+  <!-- Two parallel navigation paths suggesting analogy between scenes -->
+  <g fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M40 90 Q80 70 110 100 T180 92"/>
+    <path d="M40 150 Q80 130 110 160 T180 152"/>
+
+    <!-- Arrowheads -->
+    <polyline points="172,84 184,92 174,102"/>
+    <polyline points="172,144 184,152 174,162"/>
+  </g>
+
+  <!-- Dotted "analogy" connectors between the two paths -->
+  <g stroke="#ffffff" stroke-width="3" stroke-dasharray="3 5" stroke-linecap="round">
+    <line x1="80"  y1="86"  x2="80"  y2="142"/>
+    <line x1="128" y1="92"  x2="128" y2="152"/>
+    <line x1="172" y1="92"  x2="172" y2="152"/>
+  </g>
+
+  <!-- Small circles marking nodes -->
+  <g fill="#ffffff">
+    <circle cx="40"  cy="90"  r="5"/>
+    <circle cx="40"  cy="150" r="5"/>
+  </g>
+
+  <text x="128" y="210" font-family="Inter, ui-sans-serif, system-ui, sans-serif"
+        font-size="34" font-weight="700" fill="#ffffff" text-anchor="middle">VLN-Analogy</text>
+</svg>

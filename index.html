@@ -5,581 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon -->
-    <!-- <link rel="icon" href="data/images/icon-owl-2.ico" sizes="32x32" type="image/png"> -->
     <link rel="icon" type="image/x-icon" href="data/images/icon-owl-2.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="data/images/icon-owl-2.png">
 
     <title>Tianyi Ma - Homepage</title>
 
-    <!-- Tailwind CSS for styling -->
+    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <link
-        rel="stylesheet"
-        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-        crossorigin=""
-    />
-    <script
-        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-        crossorigin=""
-    ></script>
-
-    <!-- Lucide Icons for navigation -->
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* bg-slate-50 */
-        }
-        /* Hide all pages by default */
-        .page {
-            display: none;
-        }
-        /* Show the active page */
-        .page.active {
-            display: block;
-        }
-        /* Simple animation for section fade-in */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .uppercase {
-            text-transform: uppercase;
-        }
-        /* Nav link styling */
-        .nav-link {
-            cursor: pointer;
-            transition: color 0.2s;
-            padding-bottom: 2px;
-            border-bottom: 2px solid transparent;
-        }
-        .nav-link.active {
-            color: #2563eb; /* blue-600 */
-            font-weight: 500;
-            border-bottom-color: #2563eb;
-        }
-        .publication-authors {
-            font-style: italic;
-        }
-        .publication-authors .author-me {
-            font-weight: bold;
-            font-style: normal;
-        }
-    </style>
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body class="text-gray-800">
 
     <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-8">
 
-        <!-- Navigation Bar -->
+        <!-- Navigation -->
         <header class="bg-white/80 backdrop-blur-sm shadow-sm rounded-xl sticky top-4 z-50 mb-8">
             <nav class="flex items-center justify-between p-4">
-                <!-- <span class="text-xl font-bold text-gray-900">
-                    <img class="w-4 h-4 rounded-full object-cover shadow-lg" src="data/images/icon-owl-2.ico" alt="Tianyi Ma 2025" onerror="this.onerror=null;this.src='data/images/icon-owl-2.ico';">
-                </span> -->
-                <span id="nav-logo" class="text-xl font-bold text-gray-900">
-                    <img id="nav-logo-img"
-                         class="w-6 h-6 rounded-full object-cover shadow-lg"
-                         src="data/images/icon-owl-2.ico"
-                         alt="Tianyi Ma 2025"
-                         onerror="this.onerror=null;this.src='data/images/icon-owl-2.ico';">
-                </span>
+                <span id="nav-logo" class="text-xl font-bold text-gray-900"></span>
                 <div class="flex items-center space-x-6 text-gray-600">
-                    <a onclick="showPage('home')" class="nav-link active">Home</a>
-                    <a onclick="showPage('publications')" class="nav-link">Publications</a>
-                    <a onclick="showPage('blog')" class="nav-link">Blog</a>
-                    <!-- <a onclick="showPage('experience')" class="nav-link">Experience</a> -->
-                    <a onclick="showPage('photography')" class="nav-link">Photography</a>
+                    <a class="nav-link active" data-page="home">Home</a>
+                    <a class="nav-link"        data-page="publications">Publications</a>
+                    <a class="nav-link"        data-page="blog">Blog</a>
+                    <a class="nav-link"        data-page="photography">Photography</a>
                 </div>
             </nav>
         </header>
 
-        <!-- Main Content Area -->
         <main>
-            <!-- Home Page -->
+            <!-- Home -->
             <div id="home" class="page active">
-                <!-- Profile Header -->
-                <section class="flex flex-col sm:flex-row items-center gap-8 mb-12 fade-in-section">
-                    <!-- Replace with your profile picture path -->
-                    <img class="w-32 h-32 rounded-full object-cover shadow-lg" src="https://5ea0275.webp.li/data/images/avatar/avatar-mty-2025.png" alt="Tianyi Ma 2025" onerror="this.onerror=null;this.src='data/images/icon-owl-2.ico';">
-                    <div class="flex-1">
-                        <h1 class="text-4xl font-bold text-gray-900">Tianyi Ma</h1>
-                        <!-- <p class="text-lg text-gray-600 mt-1">Research Intern @ <a href="https://unipat.ai" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">UniPat AI</a> · Summer 2026</p> -->
-                        <p class="text-md text-gray-500">Ph.D. Student in Computer Science and Engineering @ Michigan State University</p>
-                        <!-- UPDATED ICONS -->
-                        <div class="flex space-x-4 mt-4">
-                            <a href="mailto:matiany3@msu.edu" class="text-gray-500 hover:text-blue-600" title="Email"><i data-lucide="mail" class="w-6 h-6"></i></a>
-                            <a href="https://scholar.google.com/citations?user=HB7kZ3oAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600" title="Google Scholar">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5L12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9 12 9s-5.548 2.249-6.758 4.769zM12 10c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3z"/></svg>
-                            </a>
-                            <a href="https://github.com/SueMarsR" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-900" title="GitHub"><i data-lucide="github" class="w-6 h-6"></i></a>
-                            <a href="https://www.linkedin.com/in/tianyi-ma-272156293/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-700" title="LinkedIn">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                            </a>
-                            <!-- Link to your CV pdf -->
-                            <a href="https://drive.google.com/file/d/1ds7Y5QOufSEobc57BNjpiX9WClODVf5f/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-red-600" title="Download CV"><i data-lucide="file-text" class="w-6 h-6"></i></a>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- About Me -->
-                <section class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section" style="animation-delay: 100ms;">
-                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">About Me</h2>
-                    <p class="text-gray-700 leading-relaxed space-y-4">
-                        I am a Ph.D. Student in <a href="https://hlr.github.io" target="_blank" class="text-blue-600 hover:underline"> HLR lab</a> in the Department of Computer Science and Engineering at Michigan State University, 
-                        advised by <a href="https://www.cse.msu.edu/~kordjams/" target="_blank" class="text-blue-600 hover:underline">
-                            Prof. Parisa Kordjamshidi
-                        </a>. 
-                        My research interests include Natural Language Processing, Multimodal Reasoning and Agents, and Vision-and-Language Navigation.
-                    </p>
+                <section id="profile-header"
+                         class="flex flex-col sm:flex-row items-center gap-8 mb-12 fade-in-section">
                 </section>
 
-                <!-- News Section -->
-                <section class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section" style="animation-delay: 200ms;">
-                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">News</h2>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="font-semibold text-gray-500 w-28 shrink-0">Apr 2026</span>
-                            <span>Joining <a href="https://unipat.ai" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">UniPat AI</a> as a Research Intern this summer, working on multimodal reasoning in agents.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="font-semibold text-gray-500 w-28 shrink-0">Apr 2026</span>
-                            <span>Our paper <a href="https://arxiv.org/abs/2508.07642" target="_blank" class="text-blue-600 hover:underline">"Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents"</a> (SkillNav) was accepted to <strong>ACL 2026 Main Conference</strong>.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="font-semibold text-gray-500 w-28 shrink-0">Mar 2026</span>
-                            <span>Added a new <strong>Blog</strong> section with <a href="https://unipat.ai/blog/SWE-Vision" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">SWE-Vision: A Minimal Agent for Advancing Visual Intelligence</a>.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="font-semibold text-gray-500 w-28 shrink-0">Dec 2025</span>
-                            <span>New preprint <a href="https://arxiv.org/abs/2512.14691" target="_blank" class="text-blue-600 hover:underline">"MMGR: Multi-Modal Generative Reasoning"</a> is now on arXiv.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="font-semibold text-gray-500 w-28 shrink-0">Sep 2025</span>
-                            <span>Released preprint <a href="https://arxiv.org/abs/2508.07642" target="_blank" class="text-blue-600 hover:underline">"Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents"</a> (SkillNav) on arXiv.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="font-semibold text-gray-500 w-28 shrink-0">Aug 2025</span>
-                            <span>Start visiting at UCLA NLP Group, supervised by Prof. Kai-wei Chang.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="font-semibold text-gray-500 w-28 shrink-0">Aug 2025</span>
-                            <span>One paper <a href="https://www.arxiv.org/abs/2509.25139" target="_blank" class="text-blue-600 hover:underline">"Vision-and-Language Navigation with Analogical Textual Descriptions in LLMs"</a> was accepted to EMNLP 2025 Main.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="font-semibold text-gray-500 w-28 shrink-0">May 2025</span>
-                            <span>One paper <a href="https://escholarship.org/uc/item/5pq093wq" target="_blank" class="text-blue-600 hover:underline">"Cognitive Priming Prompting Facilitates Knowledge Elicitation in Multilingual Large Language Models"</a> was accepted to ACL 2025 Findings.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="font-semibold text-gray-500 w-28 shrink-0">Feb 2025</span>
-                            <span>One paper was accepted to CogSci 2025.</span>
-                        </li>
-                         <!-- Add new news items here -->
-                    </ul>
+                <section id="about-section"
+                         class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section"
+                         style="animation-delay: 100ms;">
                 </section>
 
-                <!-- Recent Publications Section on Home Page -->
-                <section class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section" style="animation-delay: 400ms;">
+                <section id="news-section"
+                         class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section"
+                         style="animation-delay: 200ms;">
+                </section>
+
+                <section class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section"
+                         style="animation-delay: 300ms;">
                     <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">Recent Publications</h2>
-                    <!-- This div will be populated by JavaScript -->
                     <div id="recent-publications-list" class="space-y-6"></div>
-
                     <div class="text-center mt-6">
-                        <a onclick="showPage('publications')" class="text-blue-600 font-semibold hover:underline cursor-pointer">View all publications &rarr;</a>
+                        <a class="text-blue-600 font-semibold hover:underline cursor-pointer"
+                           data-page-link="publications">View all publications &rarr;</a>
                     </div>
                 </section>
 
-                <!-- Experience Section -->
-                <section class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section" style="animation-delay: 300ms;">
-                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">Experience</h2>
-                    <div class="space-y-4">
-                        <div>
-                            <h3 class="font-semibold text-lg">Research Intern</h3>
-                            <p class="text-gray-600"><a href="https://unipat.ai" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">UniPat AI</a>, Summer 2026</p>
-                            <p class="text-gray-500 text-sm">Multimodal Reasoning in Agents</p>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-lg">Visiting Scholar</h3>
-                            <p class="text-gray-600">UCLA NLP & PLUS lab, Aug 2025 - Dec 2025</p>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-lg">Teaching Assistant</h3>
-                            <p class="text-gray-600">Michigan State University, CSE 380, Spring 2025 </p>
-                        </div>
-
-                        <div>
-                            <h3 class="font-semibold text-lg">Teaching Assistant</h3>
-                            <p class="text-gray-600">Michigan State University, CSE 325, Fall 2024</p>
-                        </div>
-                    </div>
+                <section id="experience-section"
+                         class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section"
+                         style="animation-delay: 400ms;">
                 </section>
-
-                <!-- <section class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section" style="animation-delay: 200ms;">
-                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">Visitors Around the World</h2>
-                    <div id="visitors-map" style="height: 420px; border-radius: 12px; overflow: hidden;"></div>
-                    <p class="text-xs text-gray-400 mt-3">
-                      Uses browser geolocation. If you deny permission, we’ll show a default global view.
-                    </p>
-                  </section> -->
             </div>
 
-            <!-- Publications Page -->
+            <!-- Publications -->
             <div id="publications" class="page">
                 <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center fade-in-section">Selected Publications</h1>
-                <!-- This div will be populated by JavaScript -->
                 <div id="publications-list" class="space-y-8"></div>
             </div>
 
-            <!-- Blog Page -->
+            <!-- Blog -->
             <div id="blog" class="page">
                 <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center fade-in-section">Blog</h1>
-                <section class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section" style="animation-delay: 100ms;">
-                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">Latest Post</h2>
-                    <article class="space-y-3 text-gray-700">
-                        <p class="text-sm text-gray-500">March 2026 · UniPat AI Blog</p>
-                        <h3 class="text-xl font-semibold text-gray-900 leading-snug">
-                            SWE-Vision: A Minimal Agent for Advancing Visual Intelligence
-                        </h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            This post introduces SWE-Vision, a lightweight agent framework for improving visual understanding at test time through code execution. It outlines the core idea, practical setup, and key takeaways for building more capable multimodal systems.
-                        </p>
-                        <a href="https://unipat.ai/blog/SWE-Vision" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 hover:underline font-semibold">
-                            Read the full post →
-                        </a>
-                    </article>
+                <section id="blog-latest"
+                         class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section"
+                         style="animation-delay: 100ms;">
                 </section>
-
-                <section class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section" style="animation-delay: 150ms;">
-                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">Archive</h2>
-                    <ul class="space-y-3 text-gray-700">
-                        <li>
-                            <a href="https://unipat.ai/blog/SWE-Vision" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">
-                                SWE-Vision: A Minimal Agent for Advancing Visual Intelligence
-                            </a>
-                        </li>
-
-                    </ul>
+                <section id="blog-archive"
+                         class="bg-white p-6 rounded-lg shadow-md mb-8 fade-in-section"
+                         style="animation-delay: 150ms;">
                 </section>
             </div>
 
-            <!-- Publications Page -->
-            <!-- <div id="publications" class="page">
-                <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center fade-in-section">Selected Publications</h1>
-                <div class="space-y-8"> -->
-                    <!-- Publication Item -->
-                    <!-- <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in-section">
-                        <img src="data/images/pub/publication-SkillNav.png" alt="Paper Thumbnail" class="md:w-1/4 w-full h-48 md:h-auto object-cover" onerror="this.onerror=null;this.src='data/images/icon-owl-2.ico';">
-                        <div class="p-6 flex-1">
-                            <h2 class="text-xl font-semibold text-blue-700 mb-2">Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents</h2>
-                            <p class="text-gray-700 mb-3 publication-authors"><span class="author-me">Tianyi Ma</span>, Yue Zhang, Zehao Wang, Parisa Kordjamshidi</p>
-                            <p class="text-gray-600 italic mb-4">Preprint</p>
-                            <div class="space-x-4">
-                                <a href="https://arxiv.org/abs/2508.07642" class="font-semibold text-blue-600 hover:underline">[PDF]</a>
-                                <a href="https://hlr.github.io/SkillNav/" class="font-semibold text-blue-600 hover:underline">[Project]</a>
-                                <a href="https://github.com/HLR/SkillNav" class="font-semibold text-blue-600 hover:underline">[Code]</a>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- Publication Item -->
-                    <!-- <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in-section">
-                        <img src="data/pub-vln.png" alt="Paper Thumbnail" class="md:w-1/4 w-full h-48 md:h-auto object-cover" onerror="this.onerror=null;this.src='data/images/icon-owl-2.ico';">
-                        <div class="p-6 flex-1">
-                            <h2 class="text-xl font-semibold text-blue-700 mb-2">Vision-and-Language Navigation with Analogical Textual Descriptions in LLMs</h2>
-                            <p class="text-gray-700 mb-3 publication-authors">Yue Zhang, <span class="author-me">Tianyi Ma</span>, Zun Wang, Yanyuan Qiao, Parisa Kordjamshidi</p>
-                            <p class="text-gray-600 italic mb-4">EMNLP 2025</p>
-                            <div class="space-x-4">
-                                <a href="#" class="font-semibold text-blue-600 hover:underline">[PDF]</a>
-                    
-                            </div>
-                        </div>
-                    </div> -->
-                     
-                    <!-- Publication Item -->
-                    <!-- <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in-section">
-                        <img src="data/pub-vln.png" alt="Paper Thumbnail" class="md:w-1/4 w-full h-48 md:h-auto object-cover" onerror="this.onerror=null;this.src='data/images/icon-owl-2.ico';">
-                        <div class="p-6 flex-1">
-                            <h2 class="text-xl font-semibold text-blue-700 mb-2">RASPberry: Retrieval-Augmented Monte Carlo Tree Self-Play with Reasoning Consistency for Multi-Hop Question Answering</h2>
-                            <p class="text-gray-700 mb-3 publication-authors">Baixuan Li, Yunlong Fan, <span class="author-me">Tianyi Ma</span>, Miao Gao, Chuanqi Shi, Zhiqiang Gao</p>
-                            <p class="text-gray-600 italic mb-4">ACL 2025 Findings</p>
-                            <div class="space-x-4">
-                                <a href="https://aclanthology.org/2025.findings-acl.587/" class="font-semibold text-blue-600 hover:underline">[PDF]</a>
-                                <a href="https://aclanthology.org/2025.findings-acl.587/" class="font-semibold text-blue-600 hover:underline">[Code]</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-
-            <!-- Photography Page -->
+            <!-- Photography -->
             <div id="photography" class="page">
-                 <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center fade-in-section">My Photography</h1>
+                <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center fade-in-section">My Photography</h1>
                 <div class="relative w-full max-w-3xl mx-auto bg-white p-4 rounded-lg shadow-lg mb-8 fade-in-section">
-                    <div id="gallery-image-container" class="aspect-w-4 aspect-h-3">
-                        <!-- Image will be injected here by JS -->
-                    </div>
-                    <button onclick="prevPhoto()" class="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 transition">
+                    <div id="gallery-image-container" class="aspect-w-4 aspect-h-3"></div>
+                    <button id="gallery-prev"
+                            class="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 transition">
                         <i data-lucide="chevron-left" class="h-6 w-6"></i>
                     </button>
-                    <button onclick="nextPhoto()" class="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 transition">
+                    <button id="gallery-next"
+                            class="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 transition">
                         <i data-lucide="chevron-right" class="h-6 w-6"></i>
                     </button>
                 </div>
-                <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg fade-in-section" style="animation-delay: 100ms;">
-                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">About My Photography</h2>
-                    <p class="text-gray-700 leading-relaxed">
-                        Photography has been a passion of mine for many years. I love capturing the beauty of nature and urban landscapes. My work focuses on finding unique perspectives and playing with light and shadow to create compelling images.
-                    </p>
+                <div id="photography-about"
+                     class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg fade-in-section"
+                     style="animation-delay: 100ms;">
                 </div>
             </div>
         </main>
 
-        <!-- Footer -->
-        <footer class="text-center text-gray-500 mt-16 pt-8 border-t">
-            <p>&copy; 2025 Tianyi Ma. All rights reserved.</p>
-        </footer>
+        <footer id="footer" class="text-center text-gray-500 mt-16 pt-8 border-t"></footer>
     </div>
 
-    <script>
-        // --- Single Source of Truth for Publications ---
-        const publications = [
-            {
-                "title": "Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents",
-                "authors": "<span class=\"author-me\">Tianyi Ma</span>, Yue Zhang, Zehao Wang, Parisa Kordjamshidi",
-                "venue": "ACL 2026 Main Conference",
-                "image": "data/images/pub/publication-SkillNav.png",
-                "links": {
-                    "pdf": "https://arxiv.org/abs/2508.07642",
-                    "project": "https://hlr.github.io/SkillNav/",
-                    "code": "https://github.com/HLR/SkillNav"
-                }
-            },
-            {
-                "title": "Vision-and-Language Navigation with Analogical Textual Descriptions in LLMs",
-                "authors": "Yue Zhang, <span class=\"author-me\">Tianyi Ma</span>, Zun Wang, Yanyuan Qiao, Parisa Kordjamshidi",
-                "venue": "EMNLP 2025",
-                "image": "assets/pub-vln.png",
-                "links": {
-                    "pdf": "#"
-                }
-            },
-            {
-                "title": "RASPberry: Retrieval-Augmented Monte Carlo Tree Self-Play with Reasoning Consistency for Multi-Hop Question Answering",
-                "authors": "Baixuan Li, Yunlong Fan, <span class=\"author-me\">Tianyi Ma</span>, Miao Gao, Chuanqi Shi, Zhiqiang Gao",
-                "venue": "ACL 2025 Findings",
-                "image": "assets/pub-vln.png",
-                "links": {
-                    "pdf": "https://aclanthology.org/2025.findings-acl.587/",
-                    "code": "https://aclanthology.org/2025.findings-acl.587/"
-                }
-            },
-            {
-                "title": "Cognitive Priming Prompting Facilitates Knowledge Elicitation in Multilingual Large Language Models",
-                "authors": "Baixuan Li, Yunlong Fan, <span class=\"author-me\">Tianyi Ma</span>, Zhiqiang Gao",
-                "venue": "CogSci 2025",
-                "image": "assets/pub-vln.png",
-                "links": {
-                    "pdf": "https://escholarship.org/uc/item/5pq093wq",
-                }
-            }
-
-        ];
-
-        // --- Dynamic Content Population ---
-
-        function populatePublications(publications) {
-            const fullListContainer = document.getElementById('publications-list');
-            const recentListContainer = document.getElementById('recent-publications-list');
-            
-            if (fullListContainer) {
-                let fullListHTML = '';
-                publications.forEach((pub, index) => {
-                    const linksHTML = Object.entries(pub.links).map(([name, url]) => 
-                        `<a href="${url}" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 hover:underline">[${name.charAt(0).toUpperCase() + name.slice(1)}]</a>`
-                    ).join('\n');
-
-                    fullListHTML += `
-                        <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in-section" style="animation-delay: ${index * 100}ms;">
-                            <img src="${pub.image}" alt="Paper Thumbnail" class="md:w-1/4 w-full h-48 md:h-auto object-cover" onerror="this.onerror=null;this.src='data/images/icon-owl-2.ico';">
-                            <div class="p-6 flex-1">
-                                <h2 class="text-xl font-semibold text-blue-700 mb-2">${pub.title}</h2>
-                                <p class="text-gray-700 mb-3 publication-authors">${pub.authors}</p>
-                                <p class="text-gray-600 italic mb-4">${pub.venue}</p>
-                                <div class="space-x-4 uppercase">${linksHTML}</div>
-                            </div>
-                        </div>`;
-                });
-                fullListContainer.innerHTML = fullListHTML;
-            }
-
-            if (recentListContainer) {
-                let recentListHTML = '';
-                // Show the first 2 publications on the homepage
-                publications.slice(0, 2).forEach(pub => {
-                    recentListHTML += `
-                        <div class="flex flex-col sm:flex-row items-center gap-4">
-                            <img src="${pub.image}" alt="Paper Thumbnail" class="w-full sm:w-32 h-auto rounded-md object-cover" onerror="this.onerror=null;this.src='data/images/icon-owl-2.ico';">
-                            <div class="flex-1">
-                                <h3 class="font-semibold text-blue-700">${pub.title}</h3>
-                                <p class="text-sm text-gray-700 publication-authors">${pub.authors}</p>
-                                <p class="text-sm text-gray-600 italic">${pub.venue}</p>
-                            </div>
-                        </div>`;
-                });
-                recentListContainer.innerHTML = recentListHTML;
-            }
-        }
-
-        // --- Page Navigation ---
-        const pages = document.querySelectorAll('.page');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        function showPage(pageId) {
-            // Hide all pages
-            pages.forEach(page => {
-                page.classList.remove('active');
-            });
-            // Show the selected page
-            const newPage = document.getElementById(pageId);
-            if (newPage) {
-                newPage.classList.add('active');
-                // Add fade-in animation to all sections within the new page
-                newPage.querySelectorAll('.fade-in-section').forEach((section, index) => {
-                    section.style.animation = 'none'; // Reset animation
-                    section.offsetHeight; // Trigger reflow
-                    section.style.animation = `fadeIn 0.6s ease-out forwards ${index * 100}ms`;
-                });
-            }
-            // Update active state for nav links
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('onclick') === `showPage('${pageId}')`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        // --- Photography Gallery ---
-        const photos = [
-          
-          { src: 'https://5ea0275.webp.li/data/images/photograph/compressed/changzhou_center.JPG', alt: 'changzhou_center' },
-        //   { src: 'https://5ea0275.webp.li/data/images/photograph/compressed/changzhou_tower.jpg', alt: 'changzhou_tower' },
-          { src: 'https://5ea0275.webp.li/data/images/photograph/compressed/changzhou_lantern.jpg', alt: 'changzhou_lantern' },
-          { src: 'https://5ea0275.webp.li/data/images/photograph/compressed/seu-CS.JPG', alt: 'seu-CS' },
-          { src: 'https://5ea0275.webp.li/data/images/photograph/compressed/chuanxi_siguniangshan.jpg', alt: 'chuanxi_siguniangshan' },
-        ];
-        let currentPhotoIndex = 0;
-        const galleryContainer = document.getElementById('gallery-image-container');
-
-        function displayPhoto() {
-            if(galleryContainer) {
-                const photo = photos[currentPhotoIndex];
-                galleryContainer.innerHTML = `<img src="${photo.src}" alt="${photo.alt}" class="w-full h-full object-cover rounded-lg">`;
-            }
-        }
-
-        function nextPhoto() {
-            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
-            displayPhoto();
-        }
-
-        function prevPhoto() {
-            currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
-            displayPhoto();
-        }
-
-        // // --- Simple Visitors Map (current visitor only) ---
-        // async function initVisitorsMap() {
-        // const mapEl = document.getElementById('visitors-map');
-        // if (!mapEl) return;
-
-        // // Create the map
-        // const map = L.map(mapEl, { worldCopyJump: true });
-        // const tiles = L.tileLayer(
-        //     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-        //     {
-        //     maxZoom: 18,
-        //     attribution: '&copy; OpenStreetMap contributors'
-        //     }
-        // );
-        // tiles.addTo(map);
-
-        // // Default view (whole world)
-        // map.setView([20, 0], 2);
-
-        // // Helper to reverse geocode for a nice label (best-effort)
-        // async function reverseGeocode(lat, lon) {
-        //     try {
-        //     const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}&zoom=10&addressdetails=1`;
-        //     const resp = await fetch(url, { headers: { 'Accept-Language': navigator.language || 'en' } });
-        //     if (!resp.ok) return null;
-        //     const data = await resp.json();
-        //     const a = data.address || {};
-        //     const city = a.city || a.town || a.village || a.hamlet || a.suburb || '';
-        //     const region = a.state || a.region || '';
-        //     const country = a.country || '';
-        //     const pretty = [city, region, country].filter(Boolean).join(', ');
-        //     return pretty || data.display_name || null;
-        //     } catch {
-        //     return null;
-        //     }
-        // }
-
-        // // Try browser geolocation for the current visitor
-        // if ('geolocation' in navigator) {
-        //     navigator.geolocation.getCurrentPosition(async (pos) => {
-        //     const { latitude, longitude } = pos.coords;
-        //     const label = await reverseGeocode(latitude, longitude);
-        //     const marker = L.marker([latitude, longitude]).addTo(map);
-        //     marker.bindPopup(label ? `You: ${label}` : `You: (${latitude.toFixed(3)}, ${longitude.toFixed(3)})`).openPopup();
-        //     map.setView([latitude, longitude], 6);
-        //     }, () => {
-        //     // permission denied or error — keep world view
-        //     }, { enableHighAccuracy: false, timeout: 8000, maximumAge: 600000 });
-        // }
-        // }
-
-        // document.addEventListener('DOMContentLoaded', () => {
-        // initVisitorsMap();
-        // });
-
-       
-        // Call inside DOMContentLoaded after existing initializations
-        document.addEventListener('DOMContentLoaded', () => {
-        initVisitorInfo();
-        });
-
-        // --- Initial Setup ---
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize Lucide icons
-            lucide.createIcons();
-            
-            // Set initial page
-            showPage('home');
-
-            // Initialize the photo gallery
-            displayPhoto();
-
-            // This now uses the 'publications' variable defined at the top of the script
-            populatePublications(publications);
-        });
-
-    </script>
+    <script type="module" src="assets/js/main.js"></script>
 </body>
 </html>
