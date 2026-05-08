@@ -1,7 +1,9 @@
-export function renderNews(news, mountEl) {
+export function renderNews(news, mountEl, count) {
   if (!mountEl) return;
 
-  const items = news.map((n) => `
+  const visible = typeof count === 'number' ? news.slice(0, count) : news;
+
+  const items = visible.map((n) => `
     <li class="flex items-start">
       <span class="news-date">${n.date}</span>
       <span>${n.html}</span>

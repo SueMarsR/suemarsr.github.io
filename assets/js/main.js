@@ -77,7 +77,7 @@ async function init() {
     footerEl: $('#footer'),
   });
 
-  renderNews(news, $('#news-section'));
+  renderNews(news, $('#news-section'), 5);
 
   renderFullPublications(publications, $('#publications-list'));
   renderRecentPublications(publications, $('#recent-publications-list'), 2);
