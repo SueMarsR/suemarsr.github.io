@@ -1,12 +1,16 @@
 {
   "latest": {
-    "date": "March 2026",
+    "date": "May 2026",
     "source": "UniPat AI Blog",
-    "title": "SWE-Vision: A Minimal Agent for Advancing Visual Intelligence",
-    "summary": "This post introduces SWE-Vision, a lightweight agent framework for improving visual understanding at test time through code execution. It outlines the core idea, practical setup, and key takeaways for building more capable multimodal systems.",
-    "url": "https://unipat.ai/blog/SWE-Vision"
+    "title": "SaaS-Bench: Can Computer-Use Agents Leverage Real-World SaaS to Solve Professional Workflows?",
+    "summary": "This post introduces SaaS-Bench, a benchmark for evaluating whether computer-use agents can complete professional workflows across real-world SaaS applications. It highlights that while agents make partial progress, they resolve fewer than 4% of tasks end-to-end, exposing structural challenges in long-horizon execution, cross-application coordination, and error detection.",
+    "url": "https://unipat.ai/blog/SaaS-Bench"
   },
   "archive": [
+    {
+      "title": "SaaS-Bench: Can Computer-Use Agents Leverage Real-World SaaS to Solve Professional Workflows?",
+      "url": "https://unipat.ai/blog/SaaS-Bench"
+    },
     {
       "title": "SWE-Vision: A Minimal Agent for Advancing Visual Intelligence",
       "url": "https://unipat.ai/blog/SWE-Vision"
