@@ -84,7 +84,7 @@ async function init() {
 
   renderExperience(experience, $('#experience-section'));
 
-  renderBlog(blog, {
+  await renderBlog(blog, {
     latestEl:  $('#blog-latest'),
     archiveEl: $('#blog-archive'),
   });

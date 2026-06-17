@@ -1,12 +1,28 @@
 {
   "latest": {
-    "date": "May 2026",
-    "source": "UniPat AI Blog",
-    "title": "SaaS-Bench: Can Computer-Use Agents Leverage Real-World SaaS to Solve Professional Workflows?",
-    "summary": "This post introduces SaaS-Bench, a benchmark for evaluating whether computer-use agents can complete professional workflows across real-world SaaS applications. It highlights that while agents make partial progress, they resolve fewer than 4% of tasks end-to-end, exposing structural challenges in long-horizon execution, cross-application coordination, and error detection.",
-    "url": "https://unipat.ai/blog/SaaS-Bench"
+    "date": "Jun 2026",
+    "source": "Personal Blog",
+    "slug": "robot-foundation-models",
+    "languages": {
+      "en": {
+        "label": "EN",
+        "title": "The Next Step for Robot Foundation Models: Adaptation, Reasoning, and Real-World Evaluation",
+        "summary": "A first-principles look at robot foundation models: why deployment depends on cheap policy adaptation, interfaces that turn VLM reasoning into low-level control, and real-world evaluation infrastructure.",
+        "contentUrl": "data/blog/robot-foundation-models-en.md"
+      },
+      "cn": {
+        "label": "CN",
+        "title": "Robot Foundation Models 的下一步：从更大的模型，到可适配、可推理、可评测的闭环",
+        "summary": "从第一性原理出发，梳理 robot foundation models 落地所需的三个核心能力：低成本适配、把 VLM 推理转化为低层控制，以及真实世界可规模化评测。",
+        "contentUrl": "data/blog/robot-foundation-models-cn.md"
+      }
+    }
   },
   "archive": [
+    {
+      "title": "The Next Step for Robot Foundation Models: Adaptation, Reasoning, and Real-World Evaluation",
+      "url": "#robot-foundation-models"
+    },
     {
       "title": "SaaS-Bench: Can Computer-Use Agents Leverage Real-World SaaS to Solve Professional Workflows?",
       "url": "https://unipat.ai/blog/SaaS-Bench"
