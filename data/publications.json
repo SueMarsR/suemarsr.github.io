@@ -25,7 +25,8 @@
       "pdf": "https://arxiv.org/abs/2605.15777",
       "project": "https://unipat.ai/blog/SaaS-Bench",
       "code": "https://github.com/UniPat-AI/SaaS-Bench"
-    }
+    },
+    "bibtex": "@misc{shi2026saasbench,\n  title={SaaS-Bench: Can Computer-Use Agents Leverage Real-World SaaS to Solve Professional Workflows?},\n  author={Kean Shi and Zihang Li and Tianyi Ma and Zengji Tu and Jialong Wu and Xinbo Xu and Qingyao Yang and Ruoyu Wu and Weichu Xie and Ming Wu and Jason Zeng and Michael Heinrich and Elvis Zhang and Liang Chen and Kuan Li and Baobao Chang},\n  year={2026},\n  eprint={2605.15777},\n  archivePrefix={arXiv},\n  primaryClass={cs.AI},\n  url={https://arxiv.org/abs/2605.15777}\n}"
   },
   {
     "title": "MMGR: Multi-Modal Generative Reasoning",
@@ -48,7 +49,8 @@
       "pdf":     "https://arxiv.org/abs/2512.14691",
       "project": "https://zefan-cai.github.io/MMGR.github.io/",
       "code":    "https://github.com/SueMarsR/video_reasoning_new"
-    }
+    },
+    "bibtex": "@misc{cai2025mmgr,\n  title={MMGR: Multi-Modal Generative Reasoning},\n  author={Zefan Cai and Haoyi Qiu and Tianyi Ma and Haozhe Zhao and Gengze Zhou and Kung-Hsiang Huang and Parisa Kordjamshidi and Minjia Zhang and Xiao Wen and Jiuxiang Gu and Nanyun Peng and Junjie Hu},\n  year={2025},\n  eprint={2512.14691},\n  archivePrefix={arXiv},\n  primaryClass={cs.CV},\n  url={https://arxiv.org/abs/2512.14691}\n}"
   },
   {
     "title": "Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents",
@@ -64,7 +66,8 @@
       "pdf":     "https://arxiv.org/abs/2508.07642",
       "project": "https://hlr.github.io/SkillNav/",
       "code":    "https://github.com/HLR/SkillNav"
-    }
+    },
+    "bibtex": "@misc{ma2025breaking,\n  title={Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents},\n  author={Tianyi Ma and Yue Zhang and Zehao Wang and Parisa Kordjamshidi},\n  year={2025},\n  eprint={2508.07642},\n  archivePrefix={arXiv},\n  primaryClass={cs.CV},\n  url={https://arxiv.org/abs/2508.07642}\n}"
   },
   {
     "title": "Vision-and-Language Navigation with Analogical Textual Descriptions in LLMs",
@@ -79,7 +82,8 @@
     "image": "data/images/pub/publication-VLN-Analogy.svg",
     "links": {
       "pdf": "https://aclanthology.org/2025.emnlp-main.759/"
-    }
+    },
+    "bibtex": "@inproceedings{zhang-etal-2025-vision-language,\n  title={Vision-and-Language Navigation with Analogical Textual Descriptions in {LLM}s},\n  author={Zhang, Yue and Ma, Tianyi and Wang, Zun and Qiao, Yanyuan and Kordjamshidi, Parisa},\n  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},\n  month={nov},\n  year={2025},\n  address={Suzhou, China},\n  publisher={Association for Computational Linguistics},\n  url={https://aclanthology.org/2025.emnlp-main.759/},\n  doi={10.18653/v1/2025.emnlp-main.759},\n  pages={15017--15025},\n  ISBN={979-8-89176-332-6}\n}"
   },
   {
     "title": "RASPberry: Retrieval-Augmented Monte Carlo Tree Self-Play with Reasoning Consistency for Multi-Hop Question Answering",
@@ -96,7 +100,8 @@
     "links": {
       "pdf":  "https://aclanthology.org/2025.findings-acl.587/",
       "code": "https://aclanthology.org/2025.findings-acl.587/"
-    }
+    },
+    "bibtex": "@inproceedings{li-etal-2025-raspberry,\n  title={{RASP}berry: Retrieval-Augmented {M}onte {C}arlo Tree Self-Play with Reasoning Consistency for Multi-Hop Question Answering},\n  author={Li, Baixuan and Fan, Yunlong and Ma, Tianyi and Gao, Miao and Shi, Chuanqi and Gao, Zhiqiang},\n  editor={Che, Wanxiang and Nabende, Joyce and Shutova, Ekaterina and Pilehvar, Mohammad Taher},\n  booktitle={Findings of the Association for Computational Linguistics: ACL 2025},\n  month={jul},\n  year={2025},\n  address={Vienna, Austria},\n  publisher={Association for Computational Linguistics},\n  url={https://aclanthology.org/2025.findings-acl.587/},\n  doi={10.18653/v1/2025.findings-acl.587},\n  pages={11258--11276},\n  ISBN={979-8-89176-256-5}\n}"
   },
   {
     "title": "Cognitive Priming Prompting Facilitates Knowledge Elicitation in Multilingual Large Language Models",
@@ -110,6 +115,7 @@
     "image": "data/images/pub/publication-CogPrime.svg",
     "links": {
       "pdf": "https://escholarship.org/uc/item/5pq093wq"
-    }
+    },
+    "bibtex": "@inproceedings{li2025cognitive,\n  title={Cognitive Priming Prompting Facilitates Knowledge Elicitation in Multilingual Large Language Models},\n  author={Baixuan Li and Yunlong Fan and Tianyi Ma and Zhiqiang Gao},\n  booktitle={Proceedings of the Annual Meeting of the Cognitive Science Society},\n  year={2025},\n  url={https://escholarship.org/uc/item/5pq093wq}\n}"
   }
 ]

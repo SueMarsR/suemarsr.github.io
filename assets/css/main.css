@@ -79,6 +79,36 @@ body {
   font-style: normal;
 }
 
+.publication-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+}
+
+.publication-bibtex-button {
+  align-items: center;
+  color: var(--color-accent);
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 700;
+  gap: 0.25rem;
+  line-height: 1.25;
+}
+
+.publication-bibtex-button:hover {
+  text-decoration: underline;
+}
+
+.publication-bibtex-button:disabled {
+  cursor: default;
+  opacity: 0.8;
+}
+
+.publication-bibtex-button.copied {
+  color: #047857;
+}
+
 /* ---------- Blog ---------- */
 .blog-language-switch {
   align-items: center;
