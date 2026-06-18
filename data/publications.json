@@ -1,5 +1,33 @@
 [
   {
+    "title": "SaaS-Bench: Can Computer-Use Agents Leverage Real-World SaaS to Solve Professional Workflows?",
+    "authors": [
+      { "name": "Kean Shi" },
+      { "name": "Zihang Li" },
+      { "name": "Tianyi Ma", "isMe": true },
+      { "name": "Zengji Tu" },
+      { "name": "Jialong Wu" },
+      { "name": "Xinbo Xu" },
+      { "name": "Qingyao Yang" },
+      { "name": "Ruoyu Wu" },
+      { "name": "Weichu Xie" },
+      { "name": "Ming Wu" },
+      { "name": "Jason Zeng" },
+      { "name": "Michael Heinrich" },
+      { "name": "Elvis Zhang" },
+      { "name": "Liang Chen" },
+      { "name": "Kuan Li" },
+      { "name": "Baobao Chang" }
+    ],
+    "venue": "Preprint",
+    "image": "data/images/pub/publication-SaaS-Bench.svg",
+    "links": {
+      "pdf": "https://arxiv.org/abs/2605.15777",
+      "project": "https://unipat.ai/blog/SaaS-Bench",
+      "code": "https://github.com/UniPat-AI/SaaS-Bench"
+    }
+  },
+  {
     "title": "MMGR: Multi-Modal Generative Reasoning",
     "authors": [
       { "name": "Zefan Cai",          "equalContrib": true },
