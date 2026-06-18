@@ -72,4 +72,3 @@ Evaluation still needs more resolution. AutoEval currently emphasizes binary suc
 ## Closing
 
 The main signal from this line of work is that the next step for robot foundation models is not only larger models or more data. It is a closed-loop system in which pretrained policies provide behavioral priors, VLMs provide semantic reasoning, RL provides task-level improvement, and real-world evaluation infrastructure provides feedback. The most useful robot systems are likely to emerge where these lines meet.
-

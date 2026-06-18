@@ -70,4 +70,3 @@
 ## 结语
 
 这组工作的共同信号是：robot foundation models 的下一步，不只是更大的模型和更多数据，而是可适配、可推理、可评测的系统闭环。Foundation policy 提供行为先验，VLM 提供语义和常识，RL 提供任务级改进，AutoEval/RoboArena 提供真实世界反馈。真正有价值的机器人系统，很可能会从这几条线的交汇处出现。
-
