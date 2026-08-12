@@ -3,17 +3,21 @@
 ## Goal
 
 Rework the homepage at `suemarsr.github.io` so that visitors immediately
-understand Tianyi Ma's research direction: building multimodal reasoning
-agents for interactive worlds. The homepage will use SkillNav and SaaS-Bench
-as the two featured examples, while preserving the academic profile,
+understand Tianyi Ma's research direction: multimodal reasoning for agents in
+interactive worlds. The homepage will use SkillNav and SaaS-Bench as two
+research highlights, with their open code and benchmark artifacts as evidence
+of research-to-system execution. It will preserve the academic profile,
 publications, experience, and contact paths already on the site.
 
 ## Audience and outcome
 
 The primary visitors are prospective research collaborators, faculty, and AI
 research hiring teams. Within one screen of the homepage, they should be able
-to identify the research theme and open a primary paper, project page, or code
-repository for either featured project. Visitors seeking a conventional
+to identify the research questions and open a primary paper, project page, or
+code repository for either highlighted project. The projects should also make
+the research operational through open implementations, released artifacts, or
+evaluation infrastructure—without implying a professional software-engineering
+background that is not evidenced on the site. Visitors seeking a conventional
 academic record should still find the existing publications and experience
 sections without navigation changes.
 
@@ -22,13 +26,15 @@ sections without navigation changes.
 The hero title remains the author's name and academic affiliation. Its
 research-facing subtitle will be:
 
-> Building multimodal reasoning agents for interactive worlds.
+> Researching multimodal reasoning agents for interactive worlds.
 
-The revised About section will state that the research concerns how agents
-perceive, reason, and act across embodied and software environments. It will
+The revised About section will lead with the research question: how can agents
+perceive, reason, and act across embodied and software environments? It will
 retain the verified MSU / HLR Lab affiliation and advisor relationship, and
 will explicitly name multimodal reasoning, agents, and vision-and-language
-navigation as the research areas.
+navigation as the research areas. A second sentence will describe the
+engineering dimension narrowly and credibly: translating research ideas into
+open, reproducible project artifacts and evaluation infrastructure.
 
 The site stays English-first. Copy must be precise and evidence-backed: it
 must not invent personal contributions to SaaS-Bench, invent evaluation
@@ -41,7 +47,7 @@ The Home page will appear in this order:
 
 1. Existing profile hero and social/contact links.
 2. Revised About section containing the research statement.
-3. New **Featured Research** section with two project cards.
+3. New **Research Highlights** section with two project cards.
 4. Existing News section.
 5. Existing Recent Publications section and its link to the full publication
    page.
@@ -52,13 +58,16 @@ and existing JSON-backed data loading pattern remain intact.
 
 ## Featured Research section
 
-Featured research is represented by a dedicated JSON data file and a focused
-renderer. This keeps visual content separate from the profile biography and
-allows future projects to be added without changing layout code.
+Research highlights are represented by a dedicated JSON data file and a
+focused renderer. This keeps visual content separate from the profile
+biography and allows future projects to be added without changing layout code.
 
-Each project card presents a thumbnail, project label, venue/status, one
-short evidence-based summary, and accessible outbound links. Links open in a
-new tab and have `noopener noreferrer` protection.
+Each project card presents a thumbnail, research label, venue/status, one
+short evidence-based research summary, an `Open Research Artifact` line, and
+accessible outbound links. The artifact line calls out only what the canonical
+project materials substantiate, such as released code, checkpoints, data, or
+an evaluation harness. Links open in a new tab and have `noopener noreferrer`
+protection.
 
 ### SkillNav
 
@@ -67,6 +76,8 @@ new tab and have `noopener noreferrer` protection.
 - Summary: a mixture of skill-based vision-and-language navigation agents;
   the project breaks navigation into specialists and uses a VLM router to
   compose them for complex instruction following.
+- Open Research Artifact: official code, skill-specific annotations, and
+  trained specialist checkpoints.
 - Links: arXiv paper, project page, official HLR/SkillNav repository.
 
 ### SaaS-Bench
@@ -76,16 +87,20 @@ new tab and have `noopener noreferrer` protection.
 - Summary: an evaluation benchmark for computer-use agents completing
   multi-step professional workflows in real, self-hosted SaaS applications;
   its task verifier scores the resulting application state.
+- Open Research Artifact: locally deployable task environments and an
+  evaluation harness with verifier contracts.
 - Links: arXiv paper, UniPat project page, canonical UniPat-AI/SaaS-Bench
   repository.
 
 ## Visual and responsive behavior
 
 The new section will follow the existing white-card, blue-accent visual
-system. Cards will be a two-column grid on wider screens and a single column
+system. It will include a short research-context sentence before the cards,
+then present cards in a two-column grid on wider screens and a single column
 on narrow screens. The project thumbnail is decorative context; its `alt`
 text names the project. The primary content—including project name, venue,
-summary, and links—remains readable and usable without the image.
+summary, artifact line, and links—remains readable and usable without the
+image.
 
 The current page-loading error handling must continue to work if the featured
 research JSON request fails. The Featured Research renderer accepts an array
@@ -111,12 +126,13 @@ and writes only into its supplied mount element.
 1. The browser title and hero still identify Tianyi Ma and MSU, and existing
    email, Scholar, GitHub, LinkedIn, and CV links continue to render.
 2. The homepage makes “multimodal reasoning agents for interactive worlds”
-   visible before Featured Research.
-3. Exactly two featured cards appear in the stated order: SkillNav, then
+   visible before Research Highlights and describes research-to-system work
+   without asserting unverified engineering experience.
+3. Exactly two research-highlight cards appear in the stated order: SkillNav, then
    SaaS-Bench.
 4. The cards contain the specified venue/status, summaries, and canonical
-   paper/project/code links; no unverified metrics or personal-contribution
-   claims appear.
+   paper/project/code links and their specified research artifacts; no
+   unverified metrics or personal-contribution claims appear.
 5. The featured cards display side-by-side at desktop width and stack at
    mobile width.
 6. Existing publication tests, new renderer/data tests, and a static server
