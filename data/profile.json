@@ -1,10 +1,12 @@
 {
   "name": "Tianyi Ma",
   "title": "Ph.D. Student in Computer Science and Engineering @ Michigan State University",
+  "researchTagline": "Researching multimodal reasoning agents for interactive worlds.",
   "avatar": "https://5ea0275.webp.li/data/images/avatar/avatar-mty-2025.png",
   "favicon": "data/images/icon-owl-2.ico",
   "navLogo": "data/images/icon-owl-2.ico",
-  "about": "I am a Ph.D. Student in <a href=\"https://hlr.github.io\" target=\"_blank\" class=\"link\">HLR lab</a> in the Department of Computer Science and Engineering at Michigan State University, advised by <a href=\"https://www.cse.msu.edu/~kordjams/\" target=\"_blank\" class=\"link\">Prof. Parisa Kordjamshidi</a>. My research interests include Natural Language Processing, Multimodal Reasoning and Agents, and Vision-and-Language Navigation.",
+  "aboutHeading": "Research",
+  "about": "I am a Ph.D. Student in <a href=\"https://hlr.github.io\" target=\"_blank\" class=\"link\">HLR lab</a> in the Department of Computer Science and Engineering at Michigan State University, advised by <a href=\"https://www.cse.msu.edu/~kordjams/\" target=\"_blank\" class=\"link\">Prof. Parisa Kordjamshidi</a>. My research asks how agents can perceive, reason, and act across embodied and software environments, with interests in multimodal reasoning, agents, and vision-and-language navigation. I care about making these ideas reproducible through open research artifacts and evaluation infrastructure.",
   "socials": [
     { "type": "email",   "href": "mailto:matiany3@msu.edu",                                            "title": "Email" },
     { "type": "scholar", "href": "https://scholar.google.com/citations?user=HB7kZ3oAAAAJ&hl=en",       "title": "Google Scholar" },

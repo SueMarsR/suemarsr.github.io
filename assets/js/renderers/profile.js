@@ -24,6 +24,9 @@ function renderSocial(s) {
 export function renderProfile(profile, { headerEl, aboutEl, navLogoEl, footerEl }) {
   if (headerEl) {
     const socials = profile.socials.map(renderSocial).join('\n');
+    const tagline = profile.researchTagline
+      ? `<p class="mt-2 text-lg font-medium text-blue-700">${profile.researchTagline}</p>`
+      : '';
     headerEl.innerHTML = `
       <img class="w-32 h-32 rounded-full object-cover shadow-lg"
            src="${profile.avatar}" alt="${profile.name}"
@@ -31,13 +34,15 @@ export function renderProfile(profile, { headerEl, aboutEl, navLogoEl, footerEl 
       <div class="flex-1">
         <h1 class="text-4xl font-bold text-gray-900">${profile.name}</h1>
         <p class="text-md text-gray-500">${profile.title}</p>
+        ${tagline}
         <div class="flex items-center space-x-4 mt-4">${socials}</div>
       </div>`;
   }
 
   if (aboutEl) {
+    const aboutHeading = profile.aboutHeading || 'About Me';
     aboutEl.innerHTML = `
-      <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">About Me</h2>
+      <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">${aboutHeading}</h2>
       <p class="text-gray-700 leading-relaxed space-y-4">${profile.about}</p>`;
   }
 
