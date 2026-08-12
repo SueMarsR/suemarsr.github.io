@@ -5,6 +5,7 @@ import { renderFullPublications, renderRecentPublications } from './renderers/pu
 import { renderExperience } from './renderers/experience.js';
 import { renderBlog } from './renderers/blog.js';
 import { createPhotoGallery } from './renderers/photography.js';
+import { renderFeaturedResearch } from './renderers/featured-research.js';
 
 const DATA = {
   profile:      'data/profile.json',
@@ -13,6 +14,7 @@ const DATA = {
   experience:   'data/experience.json',
   blog:         'data/blog.json',
   photography:  'data/photography.json',
+  featuredResearch: 'data/featured-research.json',
 };
 
 function $(sel, root = document) { return root.querySelector(sel); }
@@ -61,13 +63,14 @@ async function init() {
   initNavigation();
 
   // Load all data in parallel
-  const [profile, news, publications, experience, blog, photography] = await Promise.all([
+  const [profile, news, publications, experience, blog, photography, featuredResearch] = await Promise.all([
     loadJSON(DATA.profile),
     loadJSON(DATA.news),
     loadJSON(DATA.publications),
     loadJSON(DATA.experience),
     loadJSON(DATA.blog),
     loadJSON(DATA.photography),
+    loadJSON(DATA.featuredResearch),
   ]);
 
   renderProfile(profile, {
@@ -76,6 +79,8 @@ async function init() {
     navLogoEl: $('#nav-logo'),
     footerEl: $('#footer'),
   });
+
+  renderFeaturedResearch(featuredResearch, $('#featured-research-list'));
 
   renderNews(news, $('#news-section'), 5);
 

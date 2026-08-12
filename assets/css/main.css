@@ -109,6 +109,106 @@ body {
   color: #047857;
 }
 
+/* ---------- Research highlights ---------- */
+.featured-research-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.featured-research-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-card);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.featured-research-card:hover {
+  box-shadow: 0 10px 15px rgb(15 23 42 / 0.08);
+  transform: translateY(-2px);
+}
+
+.featured-research-card img {
+  background: #f8fafc;
+  height: 11rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.featured-research-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+.featured-research-card h3 {
+  color: #111827;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0.25rem 0;
+}
+
+.featured-research-label {
+  color: var(--color-accent-strong);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.featured-research-venue {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 0.875rem;
+}
+
+.featured-research-summary {
+  color: #374151;
+  line-height: 1.6;
+}
+
+.featured-research-artifact {
+  background: #eff6ff;
+  border-left: 3px solid var(--color-accent);
+  color: #374151;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 1rem 0;
+  padding: 0.625rem 0.75rem;
+}
+
+.featured-research-artifact strong {
+  color: var(--color-accent-strong);
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.featured-research-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-top: auto;
+}
+
+.featured-research-link {
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.featured-research-link:hover {
+  text-decoration: underline;
+}
+
 /* ---------- Blog ---------- */
 .blog-language-switch {
   align-items: center;
@@ -205,4 +305,8 @@ body {
 
 @media (max-width: 480px) {
   .news-date { width: 5.5rem; }
+}
+
+@media (max-width: 640px) {
+  .featured-research-grid { grid-template-columns: 1fr; }
 }
