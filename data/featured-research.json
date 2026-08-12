@@ -1,0 +1,28 @@
+[
+  {
+    "name": "SkillNav",
+    "label": "Multimodal Reasoning · Embodied Agents",
+    "venue": "ACL 2026 Oral",
+    "summary": "A mixture of skill-based vision-and-language navigation agents that decomposes navigation into specialists and uses a VLM router to compose them for complex instruction following.",
+    "artifact": "Official code, skill-specific annotations, and trained specialist checkpoints.",
+    "image": "data/images/pub/publication-SkillNav.svg",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/abs/2508.07642" },
+      { "label": "Project", "url": "https://hlr.github.io/SkillNav/" },
+      { "label": "Code", "url": "https://github.com/HLR/SkillNav" }
+    ]
+  },
+  {
+    "name": "SaaS-Bench",
+    "label": "Multimodal Reasoning · Computer-Use Agents",
+    "venue": "Preprint · 2026",
+    "summary": "An evaluation benchmark for computer-use agents completing multi-step professional workflows in real, self-hosted SaaS applications, scored by task verifiers that inspect application state.",
+    "artifact": "Locally deployable task environments and an evaluation harness with verifier contracts.",
+    "image": "data/images/pub/publication-SaaS-Bench.svg",
+    "links": [
+      { "label": "Paper", "url": "https://arxiv.org/abs/2605.15777" },
+      { "label": "Project", "url": "https://unipat.ai/blog/SaaS-Bench" },
+      { "label": "Code", "url": "https://github.com/UniPat-AI/SaaS-Bench" }
+    ]
+  }
+]
