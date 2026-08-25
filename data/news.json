@@ -1,5 +1,9 @@
 [
   {
+    "date": "Aug 2026",
+    "html": "Two papers were accepted to <strong>EMNLP 2026</strong>: <a href=\"https://arxiv.org/abs/2512.14691\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"link\">\"MMGR: Multi-Modal Generative Reasoning\"</a> and <a href=\"https://github.com/HLR/CLAMP\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"link\">\"CLAMP: Constrained Decoding for Vision-Language Embodied Planning\"</a>."
+  },
+  {
     "date": "May 2026",
     "html": "Released <a href=\"https://arxiv.org/abs/2605.15777\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"link\">\"SaaS-Bench: Can Computer-Use Agents Leverage Real-World SaaS to Solve Professional Workflows?\"</a>, with the <a href=\"https://unipat.ai/blog/SaaS-Bench\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"link\">project page</a> and <a href=\"https://github.com/UniPat-AI/SaaS-Bench\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"link\">code</a> now available."
   },

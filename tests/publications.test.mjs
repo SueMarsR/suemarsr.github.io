@@ -69,3 +69,17 @@ test('every publication includes BibTeX data', async () => {
     assert.match(pub.bibtex, /^@\w+\{/);
   });
 });
+
+test('SaaS-Bench marks its first three authors as equal contributors', async () => {
+  const publications = JSON.parse(await readFile(new URL('../data/publications.json', import.meta.url), 'utf8'));
+  const saasBench = publications.find((pub) => pub.title.startsWith('SaaS-Bench:'));
+
+  assert.deepEqual(
+    saasBench.authors.slice(0, 3).map(({ name, equalContrib }) => ({ name, equalContrib })),
+    [
+      { name: 'Kean Shi', equalContrib: true },
+      { name: 'Zihang Li', equalContrib: true },
+      { name: 'Tianyi Ma', equalContrib: true },
+    ],
+  );
+});

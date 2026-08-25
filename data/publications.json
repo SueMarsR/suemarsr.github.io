@@ -2,9 +2,9 @@
   {
     "title": "SaaS-Bench: Can Computer-Use Agents Leverage Real-World SaaS to Solve Professional Workflows?",
     "authors": [
-      { "name": "Kean Shi" },
-      { "name": "Zihang Li" },
-      { "name": "Tianyi Ma", "isMe": true },
+      { "name": "Kean Shi", "equalContrib": true },
+      { "name": "Zihang Li", "equalContrib": true },
+      { "name": "Tianyi Ma", "equalContrib": true, "isMe": true },
       { "name": "Zengji Tu" },
       { "name": "Jialong Wu" },
       { "name": "Xinbo Xu" },
