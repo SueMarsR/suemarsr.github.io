@@ -17,3 +17,14 @@ test('publishes the CLAMP research page at the personal Pages subpath', () => {
   assert.ok(existsSync(path.join(clampRoot, 'assets/site.js')));
   assert.ok(existsSync(path.join(clampRoot, 'assets/paper/clamp-camera-ready.pdf')));
 });
+
+test('publishes the Findings of EMNLP 2026 citation artifact', () => {
+  const citation = readFileSync(path.join(clampRoot, 'CITATION.bib'), 'utf8');
+
+  assert.match(citation, /^@inproceedings\{ma2026clamp,/);
+  assert.match(
+    citation,
+    /booktitle\s*=\s*\{Findings of the Association for Computational Linguistics: EMNLP 2026\}/,
+  );
+  assert.doesNotMatch(citation, /@article|preprint/i);
+});
