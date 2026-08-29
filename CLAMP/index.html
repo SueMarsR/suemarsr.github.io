@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="CLAMP turns visual evidence and symbolic rules into decoding-time constraints for grounded, executable embodied plans."
+    >
+    <meta name="theme-color" content="#153f36">
+    <link rel="canonical" href="https://suemarsr.github.io/CLAMP/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://suemarsr.github.io/CLAMP/">
+    <meta property="og:title" content="CLAMP · Constrained Decoding for Vision-Language Embodied Planning">
+    <meta
+      property="og:description"
+      content="Observation-conditioned constraints for grounded, executable embodied plans."
+    >
+    <meta property="og:image" content="https://suemarsr.github.io/CLAMP/assets/social/clamp-og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CLAMP · Constrained Decoding for Vision-Language Embodied Planning">
+    <meta
+      name="twitter:description"
+      content="Observation-conditioned constraints for grounded, executable embodied plans."
+    >
+    <meta name="twitter:image" content="https://suemarsr.github.io/CLAMP/assets/social/clamp-og.png">
+    <link rel="stylesheet" href="assets/site.css">
+    <title>CLAMP · Constrained Decoding for Vision-Language Embodied Planning</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="CLAMP home">
+        <span class="wordmark-mark" aria-hidden="true">C</span>
+        <span>CLAMP</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#qualitative">Cases</a>
+        <a href="#dataset">Dataset</a>
+      </nav>
+      <a class="header-link" href="https://github.com/HLR/CLAMP">GitHub <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span>Research project</span><span>Embodied AI · Constrained generation</span></p>
+          <h1 id="hero-title">
+            <span class="title-acronym">CLAMP:</span>
+            Constrained Decoding for Vision-Language Embodied Planning
+          </h1>
+          <p class="hero-deck">
+            A frozen VLM can see a scene and still plan with objects or actions that the scene does not support.
+            CLAMP turns visual evidence and a supplied symbolic action model into hard constraints that act
+            <em>while the plan is generated</em>.
+          </p>
+
+          <div class="authors" role="group" aria-label="Authors">
+            <a href="https://suemarsr.github.io/">Tianyi Ma</a>
+            <span aria-hidden="true">·</span>
+            <a href="https://hlr.github.io/team/">Parisa Kordjamshidi</a>
+          </div>
+          <p class="affiliation">
+            Michigan State University ·
+            <a href="https://hlr.github.io/">Heterogeneous Learning and Reasoning (HLR) Lab</a>
+          </p>
+
+          <div class="hero-actions" role="group" aria-label="Project resources">
+            <a class="button button-primary" href="assets/paper/clamp-camera-ready.pdf">Camera-ready manuscript <span aria-hidden="true">↗</span></a>
+            <a class="button" href="https://github.com/HLR/CLAMP">Repository <span aria-hidden="true">↗</span></a>
+            <a class="button" href="https://huggingface.co/datasets/SueMintony/CLAMP-Sampled-Continuations-and-Demos">Dataset <span aria-hidden="true">↗</span></a>
+            <a class="button button-text" href="#citation">BibTeX <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+
+        <div class="hero-proof" role="group" aria-label="CLAMP framework overview">
+          <div class="proof-label">
+            <span>Observation-conditioned interface</span>
+            <span class="proof-index">Fig. 01</span>
+          </div>
+          <img
+            src="assets/figures/clamp-framework-camera-ready.png"
+            alt="Camera-ready CLAMP framework: visual grounding and a constraint compiler build token-level and action-level DFAs, while an HMM re-ranks the VLM distribution inside the feasible set."
+          >
+          <p>
+            Observation-conditioned hard masks define what is feasible. HMM lookahead ranks only the choices that remain.
+          </p>
+        </div>
+      </section>
+
+      <section class="thesis-band" aria-label="CLAMP thesis">
+        <p>A fluent plan is not necessarily an executable plan.</p>
+        <span aria-hidden="true">→</span>
+        <p>Constrain the distribution before an invalid action enters the sequence.</p>
+      </section>
+
+      <section class="section section-motivation" id="motivation" aria-labelledby="motivation-title">
+        <div class="section-heading">
+          <p class="section-number">01 / Why CLAMP</p>
+          <h2 id="motivation-title">Seeing is not the same as grounding.</h2>
+          <p>
+            Soft visual conditioning can leave unsupported continuations in the model distribution.
+            Post-hoc checking arrives only after those choices have compounded into a plan.
+          </p>
+        </div>
+
+        <div class="failure-grid">
+          <article class="failure-card">
+            <div class="failure-code"><span class="token token-bad">“red mug”</span><span class="token">→ pick</span></div>
+            <p class="card-kicker">Perceptual support</p>
+            <h3>Names an object that is not visible</h3>
+            <p>The generated entity is syntactically plausible but absent from the episode-specific support set.</p>
+            <span class="failure-tag">Unsupported entity</span>
+          </article>
+          <article class="failure-card">
+            <div class="failure-code"><span class="token">place</span><span class="token token-bad">before pick</span></div>
+            <p class="card-kicker">Action transition</p>
+            <h3>Chooses an action before its preconditions hold</h3>
+            <p>The sequence reads naturally, yet the symbolic world state cannot execute the next step.</p>
+            <span class="failure-tag">Infeasible action</span>
+          </article>
+          <article class="failure-card">
+            <div class="failure-code"><span class="token">valid JSON</span><span class="token token-bad">unsafe</span></div>
+            <p class="card-kicker">Safety and goals</p>
+            <h3>Satisfies the format while violating a rule</h3>
+            <p>Grammar alone cannot enforce safety, transition, and goal conditions over the full plan.</p>
+            <span class="failure-tag">Constraint violation</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-method" id="method" aria-labelledby="method-title">
+        <div class="section-heading method-heading">
+          <p class="section-number">02 / Method</p>
+          <h2 id="method-title">A constraint interface between pixels and plans.</h2>
+          <p>
+            CLAMP keeps the VLM frozen. Visual evidence supplies an episode-specific visibility constraint;
+            syntax and the supplied symbolic action model define the rest of the planning interface.
+          </p>
+        </div>
+
+        <div class="method-flow" role="group" aria-label="CLAMP method flow">
+          <div class="flow-input">
+            <span class="flow-step">01</span>
+            <p class="flow-label">Observe</p>
+            <h3>Image + instruction</h3>
+            <p>The same multimodal context reaches the planner and the interface builder.</p>
+          </div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="flow-input">
+            <span class="flow-step">02</span>
+            <p class="flow-label">Compile</p>
+            <h3>Episode-specific support</h3>
+            <p>Visible entities, syntax, transitions, and goal conditions are compiled into two runtime recognizers.</p>
+          </div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="flow-input flow-output">
+            <span class="flow-step">03</span>
+            <p class="flow-label">Decode</p>
+            <h3>Feasible plan tokens</h3>
+            <p>Hard masks remove invalid continuations; a soft prior ranks the feasible set.</p>
+          </div>
+        </div>
+
+        <div class="constraint-list">
+          <article>
+            <span class="constraint-symbol" aria-hidden="true">γ</span>
+            <div>
+              <p class="card-kicker">Hard · token level</p>
+              <h3>Syntax ∩ visibility</h3>
+              <p>The token-level DFA intersects the action language with the scene-supported entity vocabulary.</p>
+            </div>
+          </article>
+          <article>
+            <span class="constraint-symbol" aria-hidden="true">β</span>
+            <div>
+              <p class="card-kicker">Hard · action level</p>
+              <h3>Reachability within budget</h3>
+              <p>The action-level DFA accepts only grounded actions whose supplied transitions preserve goal reachability.</p>
+            </div>
+          </article>
+          <article>
+            <span class="constraint-symbol" aria-hidden="true">H</span>
+            <div>
+              <p class="card-kicker">Soft · feasible set</p>
+              <h3>HMM lookahead</h3>
+              <p>A learned sequence prior re-ranks admissible continuations without overriding any hard constraint.</p>
+            </div>
+          </article>
+        </div>
+
+        <aside class="scope-note">
+          <strong>Guarantee boundary.</strong>
+          CLAMP-standard returns <code>FAIL</code> or an accepted plan that satisfies the supplied interface,
+          assuming sound perception, specification, and masks. It does not validate those inputs or downstream physical execution.
+        </aside>
+      </section>
+
+      <section class="section section-results" id="results" aria-labelledby="results-title">
+        <div class="section-heading results-heading">
+          <p class="section-number">03 / Results</p>
+          <h2 id="results-title">Grounding improves where the interface acts.</h2>
+          <p>
+            The evaluations separate visual grounding, rule compliance, and decoder cost instead of folding every outcome into a single success claim.
+          </p>
+        </div>
+
+        <div class="result-feature">
+          <div class="result-lead">
+            <p class="card-kicker">VLABench · frozen Qwen3-VL-8B · 480 prompts</p>
+            <p class="result-number">+5.4</p>
+            <h3>points from hard constraints</h3>
+            <p>Observation-conditioned hard constraints raise weighted-DSL from 28.7 to 34.1; the text HMM reaches 37.1 and the supervised vision HMM reaches 38.7.</p>
+          </div>
+          <div class="result-chart" role="group" aria-label="VLABench weighted-DSL mean by configuration">
+            <div class="chart-row">
+              <span>Baseline</span><div class="bar-track"><span class="bar baseline" style="--value: 28.7%"></span></div><strong>28.7</strong>
+            </div>
+            <div class="chart-row">
+              <span>+ DFA only</span><div class="bar-track"><span class="bar hard" style="--value: 34.1%"></span></div><strong>34.1</strong>
+            </div>
+            <div class="chart-row">
+              <span>+ Text HMM</span><div class="bar-track"><span class="bar hmm" style="--value: 37.1%"></span></div><strong>37.1</strong>
+            </div>
+            <div class="chart-row chart-row-emphasis">
+              <span>+ Supervised vision HMM</span><div class="bar-track"><span class="bar clamp" style="--value: 38.7%"></span></div><strong>38.7</strong>
+            </div>
+            <p class="chart-note">
+              The final row uses benchmark skill/image pairs plus per-instance calibration.
+              Because there is no matched no-calibration row for that supervised vision HMM,
+              37.1→38.7 is a cumulative configuration contrast, not an isolated TTA effect.
+            </p>
+          </div>
+        </div>
+
+        <div class="result-grid">
+          <article class="result-card result-card-blue">
+            <p class="card-kicker">InternVL3.5-8B · 474 prompts · matched four-dimension subset</p>
+            <h3>Entity-ID validity</h3>
+            <div class="before-after" role="group" aria-label="Entity-ID validity improves from 0.019 to 1.000">
+              <div><span>Baseline</span><strong>0.019</strong></div>
+              <span aria-hidden="true">→</span>
+              <div><span>CLAMP</span><strong>1.000</strong></div>
+            </div>
+            <p>Format validity remains 1.000. This matched result supports interface conformance; it is not evidence that CLAMP adds visual knowledge.</p>
+          </article>
+          <article class="result-card result-card-green">
+            <p class="card-kicker">SafeAgentBench · legitimate long horizon · CLAMP-policy</p>
+            <h3>Symbolic violations</h3>
+            <div class="before-after" role="group" aria-label="CLAMP-policy symbolic violations fall from 0.41 to 0.05">
+              <div><span>Baseline</span><strong>0.41</strong></div>
+              <span aria-hidden="true">→</span>
+              <div><span>Policy</span><strong>0.05</strong></div>
+            </div>
+            <p>Safe completion rises from 0.06 to 0.18 with backup-and-retry plus validated forced-action injection. This is not the one-pass CLAMP-standard decoder.</p>
+          </article>
+          <article class="result-card result-card-ochre">
+            <p class="card-kicker">TaPA-60 grounding diagnostic</p>
+            <h3>Grounding improves; plan success does not</h3>
+            <div class="diagnostic-pair" role="group" aria-label="TaPA grounding and plan-success metrics">
+              <div><span>Out-of-scene references</span><strong>10.0% → 8.3%</strong></div>
+              <div><span>Matched plan success</span><strong>71.7% → 68.3%</strong></div>
+            </div>
+            <p>This is a grounding diagnostic, not a task-success gain; the benchmark self-judge is also sensitive to harness metadata.</p>
+          </article>
+          <article class="result-card result-card-slate">
+            <p class="card-kicker">Cross-domain HMM calibration · VH→BEHAVIOR</p>
+            <h3>Conditional log-likelihood</h3>
+            <div class="before-after" role="group" aria-label="Conditional log-likelihood falls from 7.132 to 3.095">
+              <div><span>Before</span><strong>7.132</strong></div>
+              <span aria-hidden="true">→</span>
+              <div><span>After</span><strong>3.095</strong></div>
+            </div>
+            <p>A 56.6% reduction after 30K target continuations and three Baum–Welch iterations in 417 seconds (about seven minutes), with the VLM frozen. Planning remains mixed: five dimensions show single-skill collapse.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-cases" id="qualitative" aria-labelledby="qualitative-title">
+        <div class="section-heading cases-heading">
+          <p class="section-number">04 / Qualitative evidence</p>
+          <h2 id="qualitative-title">One scene. Three constraint roles.</h2>
+          <p>
+            This InternVL3.5 measured trace records raw and post-processor probabilities from the same frozen generate call—no illustrative re-scoring.
+          </p>
+        </div>
+
+        <article class="case-feature">
+          <div class="case-context">
+            <div class="case-images">
+              <figure>
+                <img src="assets/figures/case-input.png" alt="Four-camera RGB view of a VLABench kitchen scene with a pan and condiment bottles.">
+                <figcaption>RGB observation</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/figures/case-mask.png" alt="The same kitchen scene with entity-ID segmentation labels; barbecue sauce is entity 4 and the pan is entity 2.">
+                <figcaption>Entity-ID mask</figcaption>
+              </figure>
+            </div>
+            <div class="case-prompt">
+              <span>Task</span>
+              <blockquote>“This dish lacks a deep, tangy touch. Maybe adding something could elevate its taste.”</blockquote>
+              <p>Ground truth: <code>pick(4 = bbq_sauce) → pour(2 = pan_seen)</code></p>
+            </div>
+          </div>
+
+          <div class="plan-comparison">
+            <article class="plan plan-baseline">
+              <p class="card-kicker">Unconstrained · failure</p>
+              <h3>Names instead of IDs, then keeps going.</h3>
+              <code>pick("bbq_sauce") → pour("pan_seen") → place("dishes")</code>
+              <div class="plan-metrics"><span>Schema <strong>0</strong></span><span>Exact <strong>0</strong></span><span>Total <strong>0.222</strong></span></div>
+            </article>
+            <article class="plan plan-clamp">
+              <p class="card-kicker">DFA + HMM · accepted plan</p>
+              <h3>Emits the exact integer-ID plan and stops.</h3>
+              <code>pick(4) → pour(2)</code>
+              <div class="plan-metrics"><span>Schema <strong>1</strong></span><span>Exact <strong>1</strong></span><span>Total <strong>1.000</strong></span></div>
+            </article>
+          </div>
+
+          <div class="probability-strip" role="group" aria-label="Measured decoder probability changes">
+            <article>
+              <span class="prob-step">t = 0</span>
+              <h4>Open valid JSON</h4>
+              <div class="prob-pair"><span>Raw <strong>≈0%</strong></span><span>CLAMP <strong>78.56%</strong></span></div>
+              <p>DFA masks a 92.12% markdown-fence token.</p>
+            </article>
+            <article>
+              <span class="prob-step">t = 20</span>
+              <h4>Use an integer ID</h4>
+              <div class="prob-pair"><span>Raw <strong>3.73%</strong></span><span>CLAMP <strong>99.997%</strong></span></div>
+              <p>DFA removes the quote that would open a string value.</p>
+            </article>
+            <article>
+              <span class="prob-step">t = 21</span>
+              <h4>Select entity 4</h4>
+              <div class="prob-pair"><span>Raw <strong>55.92%</strong></span><span>CLAMP <strong>55.96%</strong></span></div>
+              <p>A uniform HMM bonus preserves the legal digits' ranking.</p>
+            </article>
+            <article>
+              <span class="prob-step">t = 39</span>
+              <h4>Stop at the goal</h4>
+              <div class="prob-pair"><span>Raw <strong>11.91%</strong></span><span>CLAMP <strong>69.83%</strong></span></div>
+              <p>Soft HMM re-ranking shifts probability toward closing.</p>
+            </article>
+          </div>
+
+          <div class="case-download">
+            <p><strong>Evidence boundary:</strong> This InternVL3.5 measured trace uses the VLABench non-interactive plan evaluator. The DFA supplies schema compliance, visibility supplies entity support, and the HMM raises STOP from 11.91% to 69.83%. It demonstrates interface compliance and correct termination—not improved semantic recognition, a main Qwen3-VL result, or simulator execution-success.</p>
+            <a href="assets/figures/case-study-camera-ready.png">View the complete measured trace <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <div class="demo-grid">
+          <article class="demo-card">
+            <div class="demo-image-wrap"><img src="assets/figures/demo-success.png" alt="VLABench scene from a CLAMP plan-match example."></div>
+            <p class="card-kicker">Plan-match example</p>
+            <h3>Grounded target and skill sequence agree</h3>
+            <p>A representative example from the public 20-episode demonstration release.</p>
+          </article>
+          <article class="demo-card">
+            <div class="demo-image-wrap"><img src="assets/figures/demo-failure.png" alt="VLABench scene from a CLAMP wrong-entity counterexample."></div>
+            <p class="card-kicker">Counterexample</p>
+            <h3>The skill is plausible; the target entity is wrong</h3>
+            <p>The failure split preserves cases where planning and downstream execution come apart.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-dataset" id="dataset" aria-labelledby="dataset-title">
+        <div class="dataset-panel">
+          <div class="section-heading dataset-heading">
+            <p class="section-number">05 / Dataset</p>
+            <h2 id="dataset-title">Inspect the evidence, not just the score.</h2>
+            <p>
+              The public demonstration release pairs scene inputs, grounded plans, expert references, evaluation records, and multi-camera execution videos.
+            </p>
+            <a class="button button-light" href="https://huggingface.co/datasets/SueMintony/CLAMP-Sampled-Continuations-and-Demos">Open on Hugging Face <span aria-hidden="true">↗</span></a>
+          </div>
+          <dl class="dataset-stats">
+            <div><dt>20</dt><dd>recorded VLABench episodes</dd></div>
+            <div><dt>10 + 10</dt><dd>plan-match examples and counterexamples</dd></div>
+            <div><dt>4</dt><dd>synchronized execution cameras</dd></div>
+            <div><dt>9</dt><dd>artifact types per episode</dd></div>
+          </dl>
+          <div class="artifact-line" role="group" aria-label="Dataset artifact types">
+            <span>RGB input</span><span>Entity mask</span><span>Instruction</span><span>Entity list</span><span>CLAMP plan</span><span>Ground truth</span><span>Evaluation</span><span>Video</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-citation" id="citation" aria-labelledby="citation-title">
+        <div class="section-heading citation-heading">
+          <p class="section-number">06 / Citation</p>
+          <h2 id="citation-title">Use CLAMP in your work.</h2>
+          <p>The public citation intentionally identifies the manuscript as a 2026 preprint without inventing a venue, DOI, or arXiv identifier.</p>
+        </div>
+        <div class="citation-card">
+          <pre id="bibtex"><code>@article{ma2026clamp,
+  title   = {CLAMP: Constrained Decoding for Vision-Language Embodied Planning},
+  author  = {Ma, Tianyi and Kordjamshidi, Parisa},
+  year    = {2026},
+  note    = {Preprint}
+}</code></pre>
+          <div class="citation-actions">
+            <button class="copy-button" type="button" data-copy-citation aria-describedby="copy-status">Copy BibTeX</button>
+            <a href="CITATION.bib" download>Download .bib</a>
+          </div>
+          <p class="copy-status" id="copy-status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <span class="footer-mark" aria-hidden="true">C</span>
+        <div><strong>CLAMP</strong><p>Constrained decoding for grounded embodied plans.</p></div>
+      </div>
+      <div class="footer-links">
+        <a href="https://hlr.github.io/">HLR Lab</a>
+        <a href="https://engineering.msu.edu/about/departments/cse">Michigan State University</a>
+        <a href="https://huggingface.co/SueMintony/CLAMP-HMM-Checkpoints">Model checkpoints</a>
+        <a href="https://huggingface.co/collections/SueMintony/clamp-hmm-checkpoints-sampled-continuations-and-demos-6a876ddfa7602097020a565c">Release collection</a>
+        <a href="https://github.com/HLR/CLAMP">Repository</a>
+      </div>
+      <p class="footer-note">Research project page · 2026</p>
+    </footer>
+    <script type="module" src="assets/site.js"></script>
+  </body>
+</html>
