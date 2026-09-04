@@ -1019,6 +1019,10 @@ pre {
   margin-bottom: 3rem;
 }
 
+.acknowledgements-heading {
+  margin-bottom: 0;
+}
+
 .citation-card {
   position: relative;
   padding: clamp(1.5rem, 3vw, 3rem);
