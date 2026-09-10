@@ -131,3 +131,16 @@ test('MMGR and CLAMP publication records match their canonical sources', async (
   );
   assert.match(mmgr.bibtex, /Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing/);
 });
+
+test('CLAMP uses a square SVG cover consistent with the publication series', async () => {
+  const publications = JSON.parse(await readFile(new URL('../data/publications.json', import.meta.url), 'utf8'));
+  const clamp = publications.find((pub) => pub.title.startsWith('CLAMP:'));
+
+  assert.equal(clamp.image, 'data/images/pub/publication-CLAMP.svg');
+
+  const svg = await readFile(new URL('../data/images/pub/publication-CLAMP.svg', import.meta.url), 'utf8');
+  assert.match(svg, /viewBox="0 0 256 256"/);
+  assert.match(svg, /width="256" height="256"/);
+  assert.match(svg, /fill="#153F36"/);
+  assert.match(svg, />CLAMP<\/text>/);
+});

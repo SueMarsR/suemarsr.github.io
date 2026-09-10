@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="CLAMP">
+  <rect width="256" height="256" fill="#153F36"/>
+
+  <!-- Candidate plan tokens entering the constraint interface -->
+  <g fill="#153F36" stroke="#ffffff" stroke-width="4" stroke-linecap="round">
+    <circle cx="42" cy="52" r="7"/>
+    <circle cx="42" cy="86" r="7"/>
+    <circle cx="42" cy="120" r="7"/>
+    <path d="M50 52 H108" opacity="0.65" stroke-dasharray="5 7"/>
+    <path d="M50 86 H110"/>
+    <path d="M50 120 H108" opacity="0.65" stroke-dasharray="5 7"/>
+  </g>
+
+  <!-- Clamp-shaped hard constraint gate -->
+  <g fill="none" stroke="#ffffff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M104 34 H90 V138 H104"/>
+    <path d="M152 34 H166 V138 H152"/>
+  </g>
+
+  <!-- Invalid candidates are masked; the feasible candidate passes -->
+  <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M120 44 L136 60 M136 44 L120 60"/>
+    <path d="M116 86 L125 95 L141 76"/>
+    <path d="M120 112 L136 128 M136 112 L120 128"/>
+    <path d="M146 86 H184 V128 H80 V158 H184"/>
+    <path d="M176 150 L188 158 L176 166"/>
+  </g>
+
+  <!-- Executable-plan waypoints -->
+  <g fill="#153F36" stroke="#ffffff" stroke-width="3.5">
+    <circle cx="184" cy="128" r="5"/>
+    <circle cx="80" cy="128" r="5"/>
+    <circle cx="80" cy="158" r="5"/>
+  </g>
+
+  <text x="128" y="216" font-family="Inter, ui-sans-serif, system-ui, sans-serif"
+        font-size="40" font-weight="700" fill="#ffffff" text-anchor="middle">CLAMP</text>
+</svg>
