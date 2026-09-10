@@ -44,7 +44,7 @@ body {
 /* ---------- Navigation links ---------- */
 .nav-link {
   cursor: pointer;
-  transition: color 0.2s, border-color 0.2s;
+  transition: color 0.2s, border-color 0.2s, background-color 0.15s, box-shadow 0.15s;
   padding-bottom: 2px;
   border-bottom: 2px solid transparent;
 }
@@ -65,8 +65,21 @@ body {
   text-decoration: none;
 }
 
-.link:hover {
-  text-decoration: underline;
+.hover-highlight,
+.link {
+  border-radius: 0.15rem;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+
+.hover-highlight:hover,
+.hover-highlight:focus-visible,
+.link:hover,
+.link:focus-visible {
+  background-color: var(--color-accent);
+  box-shadow: 0 0 0 0.2rem var(--color-accent);
+  color: #fff !important;
+  outline: none;
+  text-decoration: none;
 }
 
 /* ---------- Publication author list ---------- */
@@ -205,10 +218,6 @@ body {
   font-weight: 700;
 }
 
-.featured-research-link:hover {
-  text-decoration: underline;
-}
-
 /* ---------- Blog ---------- */
 .blog-language-switch {
   align-items: center;
@@ -309,4 +318,11 @@ body {
 
 @media (max-width: 640px) {
   .featured-research-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-highlight,
+  .link {
+    transition: none;
+  }
 }

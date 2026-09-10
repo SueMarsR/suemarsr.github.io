@@ -1,5 +1,45 @@
 [
   {
+    "title": "CLAMP: Constrained Decoding for Vision-Language Embodied Planning",
+    "authors": [
+      { "name": "Tianyi Ma", "isMe": true },
+      { "name": "Parisa Kordjamshidi" }
+    ],
+    "venue": "EMNLP 2026 Findings",
+    "image": "CLAMP/assets/social/clamp-og.png",
+    "links": {
+      "pdf": "https://arxiv.org/abs/2609.08602",
+      "project": "https://suemarsr.github.io/CLAMP/",
+      "code": "https://github.com/HLR/CLAMP"
+    },
+    "bibtex": "@inproceedings{ma2026clamp,\n  title={{CLAMP}: Constrained Decoding for Vision-Language Embodied Planning},\n  author={Ma, Tianyi and Kordjamshidi, Parisa},\n  booktitle={Findings of the Association for Computational Linguistics: EMNLP 2026},\n  year={2026},\n  publisher={Association for Computational Linguistics},\n  eprint={2609.08602},\n  archivePrefix={arXiv},\n  primaryClass={cs.AI},\n  url={https://arxiv.org/abs/2609.08602}\n}"
+  },
+  {
+    "title": "MMGR: Multi-Modal Generative Reasoning",
+    "authors": [
+      { "name": "Zefan Cai",          "equalContrib": true },
+      { "name": "Haoyi Qiu",          "equalContrib": true },
+      { "name": "Tianyi Ma",          "equalContrib": true, "isMe": true },
+      { "name": "Haozhe Zhao" },
+      { "name": "Gengze Zhou" },
+      { "name": "Kung-Hsiang Huang" },
+      { "name": "Parisa Kordjamshidi" },
+      { "name": "Minjia Zhang" },
+      { "name": "Wen Xiao" },
+      { "name": "Jiuxiang Gu" },
+      { "name": "Nanyun Peng" },
+      { "name": "Junjie Hu" }
+    ],
+    "venue": "EMNLP 2026 Main Conference",
+    "image": "data/images/pub/publication-MMGR.svg",
+    "links": {
+      "pdf":     "https://arxiv.org/abs/2512.14691",
+      "project": "https://zefan-cai.github.io/MMGR.github.io/",
+      "code":    "https://github.com/SueMarsR/video_reasoning_new"
+    },
+    "bibtex": "@inproceedings{cai2026mmgr,\n  title={{MMGR}: Multi-Modal Generative Reasoning},\n  author={Zefan Cai and Haoyi Qiu and Tianyi Ma and Haozhe Zhao and Gengze Zhou and Kung-Hsiang Huang and Parisa Kordjamshidi and Minjia Zhang and Wen Xiao and Jiuxiang Gu and Nanyun Peng and Junjie Hu},\n  booktitle={Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing},\n  year={2026},\n  publisher={Association for Computational Linguistics},\n  eprint={2512.14691},\n  archivePrefix={arXiv},\n  primaryClass={cs.CL},\n  url={https://arxiv.org/abs/2512.14691}\n}"
+  },
+  {
     "title": "SaaS-Bench: Can Computer-Use Agents Leverage Real-World SaaS to Solve Professional Workflows?",
     "authors": [
       { "name": "Kean Shi", "equalContrib": true },
@@ -27,30 +67,6 @@
       "code": "https://github.com/UniPat-AI/SaaS-Bench"
     },
     "bibtex": "@misc{shi2026saasbench,\n  title={SaaS-Bench: Can Computer-Use Agents Leverage Real-World SaaS to Solve Professional Workflows?},\n  author={Kean Shi and Zihang Li and Tianyi Ma and Zengji Tu and Jialong Wu and Xinbo Xu and Qingyao Yang and Ruoyu Wu and Weichu Xie and Ming Wu and Jason Zeng and Michael Heinrich and Elvis Zhang and Liang Chen and Kuan Li and Baobao Chang},\n  year={2026},\n  eprint={2605.15777},\n  archivePrefix={arXiv},\n  primaryClass={cs.AI},\n  url={https://arxiv.org/abs/2605.15777}\n}"
-  },
-  {
-    "title": "MMGR: Multi-Modal Generative Reasoning",
-    "authors": [
-      { "name": "Zefan Cai",          "equalContrib": true },
-      { "name": "Haoyi Qiu",          "equalContrib": true },
-      { "name": "Tianyi Ma",          "equalContrib": true, "isMe": true },
-      { "name": "Haozhe Zhao" },
-      { "name": "Gengze Zhou" },
-      { "name": "Kung-Hsiang Huang" },
-      { "name": "Parisa Kordjamshidi" },
-      { "name": "Xiao Wen" },
-      { "name": "Jiuxiang Gu" },
-      { "name": "Nanyun Peng" },
-      { "name": "Junjie Hu" }
-    ],
-    "venue": "Preprint",
-    "image": "data/images/pub/publication-MMGR.svg",
-    "links": {
-      "pdf":     "https://arxiv.org/abs/2512.14691",
-      "project": "https://zefan-cai.github.io/MMGR.github.io/",
-      "code":    "https://github.com/SueMarsR/video_reasoning_new"
-    },
-    "bibtex": "@misc{cai2025mmgr,\n  title={MMGR: Multi-Modal Generative Reasoning},\n  author={Zefan Cai and Haoyi Qiu and Tianyi Ma and Haozhe Zhao and Gengze Zhou and Kung-Hsiang Huang and Parisa Kordjamshidi and Minjia Zhang and Xiao Wen and Jiuxiang Gu and Nanyun Peng and Junjie Hu},\n  year={2025},\n  eprint={2512.14691},\n  archivePrefix={arXiv},\n  primaryClass={cs.CV},\n  url={https://arxiv.org/abs/2512.14691}\n}"
   },
   {
     "title": "Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents",

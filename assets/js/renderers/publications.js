@@ -9,7 +9,7 @@ function formatAuthors(authors) {
 
 function linkButtons(links) {
   return Object.entries(links).map(([name, url]) =>
-    `<a href="${url}" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 hover:underline">[${name.charAt(0).toUpperCase() + name.slice(1)}]</a>`
+    `<a href="${url}" target="_blank" rel="noopener noreferrer" class="hover-highlight font-semibold text-blue-600">[${name.charAt(0).toUpperCase() + name.slice(1)}]</a>`
   ).join('\n');
 }
 

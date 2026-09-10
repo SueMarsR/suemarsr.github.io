@@ -5,6 +5,7 @@ import { readFile } from 'node:fs/promises';
 import {
   bindPublicationCopyButtons,
   renderFullPublications,
+  renderRecentPublications,
 } from '../assets/js/renderers/publications.js';
 
 test('renderFullPublications adds a BibTeX copy button when publication has bibtex', () => {
@@ -82,4 +83,51 @@ test('SaaS-Bench marks its first three authors as equal contributors', async () 
       { name: 'Tianyi Ma', equalContrib: true },
     ],
   );
+});
+
+test('recent publications foreground the two accepted EMNLP 2026 papers', async () => {
+  const publications = JSON.parse(await readFile(new URL('../data/publications.json', import.meta.url), 'utf8'));
+  const mountEl = { innerHTML: '' };
+
+  renderRecentPublications(publications, mountEl, 2);
+
+  assert.match(mountEl.innerHTML, /CLAMP: Constrained Decoding for Vision-Language Embodied Planning/);
+  assert.match(mountEl.innerHTML, /EMNLP 2026 Findings/);
+  assert.match(mountEl.innerHTML, /MMGR: Multi-Modal Generative Reasoning/);
+  assert.match(mountEl.innerHTML, /EMNLP 2026 Main Conference/);
+  assert.doesNotMatch(mountEl.innerHTML, /SaaS-Bench/);
+});
+
+test('MMGR and CLAMP publication records match their canonical sources', async () => {
+  const publications = JSON.parse(await readFile(new URL('../data/publications.json', import.meta.url), 'utf8'));
+  const clamp = publications.find((pub) => pub.title.startsWith('CLAMP:'));
+  const mmgr = publications.find((pub) => pub.title.startsWith('MMGR:'));
+
+  assert.ok(clamp, 'CLAMP publication is missing');
+  assert.equal(clamp.venue, 'EMNLP 2026 Findings');
+  assert.deepEqual(clamp.authors.map(({ name }) => name), ['Tianyi Ma', 'Parisa Kordjamshidi']);
+  assert.equal(clamp.links.pdf, 'https://arxiv.org/abs/2609.08602');
+  assert.equal(clamp.links.project, 'https://suemarsr.github.io/CLAMP/');
+  assert.equal(clamp.links.code, 'https://github.com/HLR/CLAMP');
+  assert.match(clamp.bibtex, /Findings of the Association for Computational Linguistics: EMNLP 2026/);
+
+  assert.equal(mmgr.venue, 'EMNLP 2026 Main Conference');
+  assert.deepEqual(
+    mmgr.authors.map(({ name }) => name),
+    [
+      'Zefan Cai',
+      'Haoyi Qiu',
+      'Tianyi Ma',
+      'Haozhe Zhao',
+      'Gengze Zhou',
+      'Kung-Hsiang Huang',
+      'Parisa Kordjamshidi',
+      'Minjia Zhang',
+      'Wen Xiao',
+      'Jiuxiang Gu',
+      'Nanyun Peng',
+      'Junjie Hu',
+    ],
+  );
+  assert.match(mmgr.bibtex, /Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing/);
 });

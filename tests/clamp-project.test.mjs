@@ -15,7 +15,8 @@ test('publishes the CLAMP research page at the personal Pages subpath', () => {
   assert.match(html, /https:\/\/suemarsr\.github\.io\/CLAMP\//i);
   assert.ok(existsSync(path.join(clampRoot, 'assets/site.css')));
   assert.ok(existsSync(path.join(clampRoot, 'assets/site.js')));
-  assert.ok(existsSync(path.join(clampRoot, 'assets/paper/clamp-camera-ready.pdf')));
+  assert.match(html, /href="https:\/\/arxiv\.org\/abs\/2609\.08602"/);
+  assert.doesNotMatch(html, /assets\/paper\/clamp-camera-ready\.pdf/);
 });
 
 test('publishes the Findings of EMNLP 2026 citation artifact', () => {

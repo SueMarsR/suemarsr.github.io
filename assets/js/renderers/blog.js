@@ -170,7 +170,7 @@ export async function renderBlog(blog, { latestEl, archiveEl }) {
         </div>
         <p class="blog-summary text-gray-700 leading-relaxed">${current.summary || p.summary || ''}</p>
         ${p.url ? `
-          <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 hover:underline font-semibold">
+          <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="hover-highlight inline-block text-blue-600 font-semibold">
             Read the full post →
           </a>` : ''}
         <div class="blog-content leading-relaxed text-gray-800"></div>
@@ -248,7 +248,7 @@ export async function renderBlog(blog, { latestEl, archiveEl }) {
   if (archiveEl) {
     const items = (blog.archive || []).map((p) => `
       <li>
-        <a href="${p.url}" ${p.url?.startsWith('#') ? '' : 'target="_blank" rel="noopener noreferrer"'} class="text-blue-600 hover:underline font-semibold">
+        <a href="${p.url}" ${p.url?.startsWith('#') ? '' : 'target="_blank" rel="noopener noreferrer"'} class="hover-highlight text-blue-600 font-semibold">
           ${p.title}
         </a>
       </li>`).join('');

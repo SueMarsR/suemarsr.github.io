@@ -12,7 +12,7 @@ function escapeAttr(value) {
 }
 
 function renderLink({ label, url }) {
-  return `<a href="${escapeAttr(url)}" target="_blank" rel="noopener noreferrer" class="featured-research-link">${escapeHtml(label)}</a>`;
+  return `<a href="${escapeAttr(url)}" target="_blank" rel="noopener noreferrer" class="featured-research-link hover-highlight">${escapeHtml(label)}</a>`;
 }
 
 export function renderFeaturedResearch(projects, mountEl) {
