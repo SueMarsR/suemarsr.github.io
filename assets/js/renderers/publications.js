@@ -21,6 +21,15 @@ function escapeAttr(value) {
     .replaceAll('>', '&gt;');
 }
 
+function recentTitle(pub) {
+  const destination = pub.links?.project || pub.links?.pdf;
+  const title = escapeAttr(pub.title);
+
+  if (!destination) return title;
+
+  return `<a href="${escapeAttr(destination)}" target="_blank" rel="noopener noreferrer" class="hover-highlight">${title}</a>`;
+}
+
 function createIcons() {
   if (globalThis.window?.lucide && typeof globalThis.window.lucide.createIcons === 'function') {
     globalThis.window.lucide.createIcons();
@@ -76,7 +85,7 @@ export function renderRecentPublications(publications, mountEl, count = 2) {
     <div class="flex flex-col sm:flex-row items-center gap-4">
       ${thumbWithFallback(pub.image)}
       <div class="flex-1">
-        <h3 class="font-semibold text-blue-700">${pub.title}</h3>
+        <h3 class="font-semibold text-blue-700">${recentTitle(pub)}</h3>
         <p class="text-sm text-gray-700 publication-authors">${formatAuthors(pub.authors)}</p>
         <p class="text-sm text-gray-600 italic">${pub.venue}</p>
       </div>

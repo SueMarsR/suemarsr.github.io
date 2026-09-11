@@ -98,6 +98,59 @@ test('recent publications foreground the two accepted EMNLP 2026 papers', async 
   assert.doesNotMatch(mountEl.innerHTML, /SaaS-Bench/);
 });
 
+test('recent publication title prefers the project page over the paper link', () => {
+  const mountEl = { innerHTML: '' };
+
+  renderRecentPublications([{
+    title: 'Project First',
+    authors: [],
+    venue: 'ExampleConf 2026',
+    image: '',
+    links: {
+      project: 'https://example.com/project',
+      pdf: 'https://example.com/paper',
+    },
+  }], mountEl, 1);
+
+  assert.match(
+    mountEl.innerHTML,
+    /<a href="https:\/\/example\.com\/project" target="_blank" rel="noopener noreferrer" class="hover-highlight">Project First<\/a>/,
+  );
+  assert.doesNotMatch(mountEl.innerHTML, /href="https:\/\/example\.com\/paper"/);
+});
+
+test('recent publication title falls back to the paper link', () => {
+  const mountEl = { innerHTML: '' };
+
+  renderRecentPublications([{
+    title: 'Paper Fallback',
+    authors: [],
+    venue: 'ExampleConf 2026',
+    image: '',
+    links: { pdf: 'https://example.com/paper' },
+  }], mountEl, 1);
+
+  assert.match(
+    mountEl.innerHTML,
+    /<a href="https:\/\/example\.com\/paper" target="_blank" rel="noopener noreferrer" class="hover-highlight">Paper Fallback<\/a>/,
+  );
+});
+
+test('recent publication title stays plain when no destination exists', () => {
+  const mountEl = { innerHTML: '' };
+
+  renderRecentPublications([{
+    title: 'No Destination',
+    authors: [],
+    venue: 'ExampleConf 2026',
+    image: '',
+    links: {},
+  }], mountEl, 1);
+
+  assert.match(mountEl.innerHTML, /<h3 class="font-semibold text-blue-700">No Destination<\/h3>/);
+  assert.doesNotMatch(mountEl.innerHTML, /<a[^>]*>No Destination<\/a>/);
+});
+
 test('MMGR and CLAMP publication records match their canonical sources', async () => {
   const publications = JSON.parse(await readFile(new URL('../data/publications.json', import.meta.url), 'utf8'));
   const clamp = publications.find((pub) => pub.title.startsWith('CLAMP:'));
