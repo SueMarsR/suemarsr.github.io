@@ -15,7 +15,7 @@
   {
     "name": "SaaS-Bench",
     "label": "Multimodal Reasoning · Computer-Use Agents",
-    "venue": "Preprint · 2026",
+    "venue": "NeurIPS 2026 ED Track · Poster",
     "summary": "An evaluation benchmark for computer-use agents completing multi-step professional workflows in real, self-hosted SaaS applications, scored by task verifiers that inspect application state.",
     "artifact": "Locally deployable task environments and an evaluation harness with verifier contracts.",
     "image": "data/images/pub/publication-SaaS-Bench.svg",

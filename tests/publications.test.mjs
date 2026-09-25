@@ -85,17 +85,17 @@ test('SaaS-Bench marks its first three authors as equal contributors', async () 
   );
 });
 
-test('recent publications foreground the two accepted EMNLP 2026 papers', async () => {
+test('recent publications foreground the NeurIPS and latest EMNLP 2026 papers', async () => {
   const publications = JSON.parse(await readFile(new URL('../data/publications.json', import.meta.url), 'utf8'));
   const mountEl = { innerHTML: '' };
 
   renderRecentPublications(publications, mountEl, 2);
 
+  assert.match(mountEl.innerHTML, /SaaS-Bench: Can Computer-Use Agents Leverage Real-World SaaS to Solve Professional Workflows\?/);
+  assert.match(mountEl.innerHTML, /NeurIPS 2026 ED Track \(Poster\)/);
   assert.match(mountEl.innerHTML, /CLAMP: Constrained Decoding for Vision-Language Embodied Planning/);
   assert.match(mountEl.innerHTML, /EMNLP 2026 Findings/);
-  assert.match(mountEl.innerHTML, /MMGR: Multi-Modal Generative Reasoning/);
-  assert.match(mountEl.innerHTML, /EMNLP 2026 Main Conference/);
-  assert.doesNotMatch(mountEl.innerHTML, /SaaS-Bench/);
+  assert.doesNotMatch(mountEl.innerHTML, /MMGR/);
 });
 
 test('recent publication title prefers the project page over the paper link', () => {

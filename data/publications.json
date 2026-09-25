@@ -1,5 +1,34 @@
 [
   {
+    "title": "SaaS-Bench: Can Computer-Use Agents Leverage Real-World SaaS to Solve Professional Workflows?",
+    "authors": [
+      { "name": "Kean Shi", "equalContrib": true },
+      { "name": "Zihang Li", "equalContrib": true },
+      { "name": "Tianyi Ma", "equalContrib": true, "isMe": true },
+      { "name": "Zengji Tu" },
+      { "name": "Jialong Wu" },
+      { "name": "Xinbo Xu" },
+      { "name": "Qingyao Yang" },
+      { "name": "Ruoyu Wu" },
+      { "name": "Weichu Xie" },
+      { "name": "Ming Wu" },
+      { "name": "Jason Zeng" },
+      { "name": "Michael Heinrich" },
+      { "name": "Elvis Zhang" },
+      { "name": "Liang Chen" },
+      { "name": "Kuan Li" },
+      { "name": "Baobao Chang" }
+    ],
+    "venue": "NeurIPS 2026 ED Track (Poster)",
+    "image": "data/images/pub/publication-SaaS-Bench.svg",
+    "links": {
+      "pdf": "https://arxiv.org/abs/2605.15777",
+      "project": "https://unipat.ai/blog/SaaS-Bench",
+      "code": "https://github.com/UniPat-AI/SaaS-Bench"
+    },
+    "bibtex": "@inproceedings{shi2026saasbench,\n  title={SaaS-Bench: Can Computer-Use Agents Leverage Real-World SaaS to Solve Professional Workflows?},\n  author={Kean Shi and Zihang Li and Tianyi Ma and Zengji Tu and Jialong Wu and Xinbo Xu and Qingyao Yang and Ruoyu Wu and Weichu Xie and Ming Wu and Jason Zeng and Michael Heinrich and Elvis Zhang and Liang Chen and Kuan Li and Baobao Chang},\n  booktitle={NeurIPS 2026 ED Track},\n  year={2026},\n  eprint={2605.15777},\n  archivePrefix={arXiv},\n  primaryClass={cs.AI},\n  url={https://arxiv.org/abs/2605.15777}\n}"
+  },
+  {
     "title": "CLAMP: Constrained Decoding for Vision-Language Embodied Planning",
     "authors": [
       { "name": "Tianyi Ma", "isMe": true },
@@ -38,35 +67,6 @@
       "code":    "https://github.com/SueMarsR/video_reasoning_new"
     },
     "bibtex": "@inproceedings{cai2026mmgr,\n  title={{MMGR}: Multi-Modal Generative Reasoning},\n  author={Zefan Cai and Haoyi Qiu and Tianyi Ma and Haozhe Zhao and Gengze Zhou and Kung-Hsiang Huang and Parisa Kordjamshidi and Minjia Zhang and Wen Xiao and Jiuxiang Gu and Nanyun Peng and Junjie Hu},\n  booktitle={Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing},\n  year={2026},\n  publisher={Association for Computational Linguistics},\n  eprint={2512.14691},\n  archivePrefix={arXiv},\n  primaryClass={cs.CL},\n  url={https://arxiv.org/abs/2512.14691}\n}"
-  },
-  {
-    "title": "SaaS-Bench: Can Computer-Use Agents Leverage Real-World SaaS to Solve Professional Workflows?",
-    "authors": [
-      { "name": "Kean Shi", "equalContrib": true },
-      { "name": "Zihang Li", "equalContrib": true },
-      { "name": "Tianyi Ma", "equalContrib": true, "isMe": true },
-      { "name": "Zengji Tu" },
-      { "name": "Jialong Wu" },
-      { "name": "Xinbo Xu" },
-      { "name": "Qingyao Yang" },
-      { "name": "Ruoyu Wu" },
-      { "name": "Weichu Xie" },
-      { "name": "Ming Wu" },
-      { "name": "Jason Zeng" },
-      { "name": "Michael Heinrich" },
-      { "name": "Elvis Zhang" },
-      { "name": "Liang Chen" },
-      { "name": "Kuan Li" },
-      { "name": "Baobao Chang" }
-    ],
-    "venue": "Preprint",
-    "image": "data/images/pub/publication-SaaS-Bench.svg",
-    "links": {
-      "pdf": "https://arxiv.org/abs/2605.15777",
-      "project": "https://unipat.ai/blog/SaaS-Bench",
-      "code": "https://github.com/UniPat-AI/SaaS-Bench"
-    },
-    "bibtex": "@misc{shi2026saasbench,\n  title={SaaS-Bench: Can Computer-Use Agents Leverage Real-World SaaS to Solve Professional Workflows?},\n  author={Kean Shi and Zihang Li and Tianyi Ma and Zengji Tu and Jialong Wu and Xinbo Xu and Qingyao Yang and Ruoyu Wu and Weichu Xie and Ming Wu and Jason Zeng and Michael Heinrich and Elvis Zhang and Liang Chen and Kuan Li and Baobao Chang},\n  year={2026},\n  eprint={2605.15777},\n  archivePrefix={arXiv},\n  primaryClass={cs.AI},\n  url={https://arxiv.org/abs/2605.15777}\n}"
   },
   {
     "title": "Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents",
